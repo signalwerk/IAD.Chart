@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>IAD</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+  <style>
+    html {
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    th {
+        text-align: left;
+    }
+
+    tr {
+        border-bottom: 0.12rem solid #ccc;
+        @media print {
+            page-break-inside: avoid;
+        }
+    }
+
+    td,
+    th {
+        vertical-align: top;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- React app will be injected into the following `div` element: -->
+  <div id="app"></div>
+  <!-- Include bundled JavaScript: -->
+  <script src="bundle.js"></script>
+</body>
+</html>
