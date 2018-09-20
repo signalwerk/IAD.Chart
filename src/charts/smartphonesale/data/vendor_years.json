@@ -1,0 +1,127 @@
+{
+  "info": {
+    "title": {
+      "DE-CH": ""
+    },
+    "caption": {
+      "DE-CH": ""
+    },
+    "source" : [{
+       "EN-EN": "Number of personal computer (PC) shipments worldwide by vendor (in million units)",
+       "info": "look at the source of the site there is a `table#statTable--mobile`",
+       "URL": "https://www.statista.com/statistics/267023/global-pc-shipments-since-2006-by-vendor/"
+    }]
+  },
+  "shipments": [
+  {
+    "year": 2006,
+    "Lenovo": 16.65,
+    "HP Inc": 38.04,
+    "Dell": 38.05,
+    "Asus": null,
+    "Apple": null,
+    "Acer": 18.25,
+    "Toshiba": 9.2,
+    "Others": 119.02
+  },
+  {
+    "year": 2007,
+    "Lenovo": 20.11,
+    "HP Inc": 49.43,
+    "Dell": 38.7,
+    "Asus": null,
+    "Apple": null,
+    "Acer": 26.5,
+    "Toshiba": 10.96,
+    "Others": 126.77
+  },
+  {
+    "year": 2008,
+    "Lenovo": 21.79,
+    "HP Inc": 52.94,
+    "Dell": 41.07,
+    "Asus": null,
+    "Apple": null,
+    "Acer": 30.8,
+    "Toshiba": 13.5,
+    "Others": 130.66
+  },
+  {
+    "year": 2009,
+    "Lenovo": 24.74,
+    "HP Inc": 58.94,
+    "Dell": 37.35,
+    "Asus": null,
+    "Apple": null,
+    "Acer": 39.78,
+    "Toshiba": 15.5,
+    "Others": 132.03
+  },
+  {
+    "year": 2010,
+    "Lenovo": 38.18,
+    "HP Inc": 62.74,
+    "Dell": 42.12,
+    "Asus": 18.9,
+    "Apple": null,
+    "Acer": 48.76,
+    "Toshiba": 19.01,
+    "Others": 121.19
+  },
+  {
+    "year": 2011,
+    "Lenovo": 45.7,
+    "HP Inc": 60.55,
+    "Dell": 42.86,
+    "Asus": 20.68,
+    "Apple": null,
+    "Acer": 39.28,
+    "Toshiba": null,
+    "Others": 156.28
+  },
+  {
+    "year": 2012,
+    "Lenovo": 52.19,
+    "HP Inc": 56.51,
+    "Dell": 37.61,
+    "Asus": 24.34,
+    "Apple": null,
+    "Acer": 35.75,
+    "Toshiba": null,
+    "Others": 144.67
+  },
+  {
+    "year": 2013,
+    "Lenovo": 53.49,
+    "HP Inc": 51.25,
+    "Dell": 36.83,
+    "Asus": 20.85,
+    "Apple": null,
+    "Acer": 25.31,
+    "Toshiba": null,
+    "Others": 128.73
+  },
+  {
+    "year": 2014,
+    "Lenovo": 58.96,
+    "HP Inc": 54.99,
+    "Dell": 40.5,
+    "Asus": 22.67,
+    "Apple": 19.6,
+    "Acer": 24.02,
+    "Toshiba": null,
+    "Others": 92.95
+  },
+  {
+    "year": 2015,
+    "Lenovo": 57.27,
+    "HP Inc": 52.55,
+    "Dell": 38.37,
+    "Asus": 21.16,
+    "Apple": 20.38,
+    "Acer": 20.29,
+    "Toshiba": null,
+    "Others": 77.66
+  }
+]
+}

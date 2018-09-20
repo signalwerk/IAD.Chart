@@ -1,0 +1,39 @@
+{
+  "source": "http://www.statista.com/statistics/263437/global-smartphone-sales-to-end-users-since-2007/",
+  "sales" : [
+
+    {
+      "year"  : 2007,
+      "unitsInMio" : 122.32
+    },
+    {
+      "year"  : 2008,
+      "unitsInMio" : 139.29
+    },
+    {
+      "year"  : 2009,
+      "unitsInMio" : 172.38
+    },
+    {
+      "year"  : 2010,
+      "unitsInMio" : 296.65
+    },
+    {
+      "year"  : 2011,
+      "unitsInMio" : 472
+    },
+    {
+      "year"  : 2012,
+      "unitsInMio" : 680.11
+    },
+    {
+      "year"  : 2013,
+      "unitsInMio" : 969.72
+    },
+    {
+      "year"  : 2014,
+      "unitsInMio" : 1244.89
+    }
+
+  ]
+}
