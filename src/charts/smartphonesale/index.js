@@ -12,8 +12,6 @@ import { VictoryBar, VictoryContainer, VictoryLabel, VictoryLine, VictoryChart, 
 
 export default class Smartphonesale extends React.Component {
   render() {
-    console.log('desktopShipment', Data.desktopShipment())
-
     return (
       <div>
         <VictoryChart
@@ -26,11 +24,7 @@ export default class Smartphonesale extends React.Component {
 
 
 
-          {/* Create stylistic elements */}
-          <VictoryContainer>
-            <rect x="54" y="0" width="10" height="30" fill="#f01616"/>
-            <rect x="420" y="10" width="20" height="20" fill="#458ca8"/>
-          </VictoryContainer>
+
 
           <VictoryAxis
             tickValues={Data.smartphoneYears()}

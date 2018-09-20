@@ -25,10 +25,26 @@ const blueGrey300 = "#90A4AE";
 const blueGrey700 = "#455A64";
 const grey900 = "#212121";
 
-
-
-
 // sh
+
+const strokes = [
+
+  {stroke: "#d73027", strokeWidth: "0.2rem"},
+  {stroke: "#4575b4", strokeWidth: "0.2rem"},
+  {stroke: "#fc8d59", strokeWidth: "0.2rem"},
+  {stroke: "#91bfdb" , strokeWidth: "0.2rem"},
+  {stroke: "#fee090" , strokeWidth: "0.2rem"},
+]
+const strokesPrint = [
+  {stroke: "black"},
+  {stroke: "black", strokeDasharray: "8,7"},
+  {stroke: "black", strokeDasharray: "0.01,8"},
+  {stroke: "black"},
+  {stroke: "black", strokeDasharray: "0.01,3"},
+
+]
+export {strokes}
+
 const cGrey300 = "#969696";
 const cGrey700 = "#455A64";
 const cBlack = "#000000";
@@ -44,6 +60,11 @@ const cAxisLine = cGrey300;
 const sansSerif = "'Open Sans', 'Helvetica Neue', Helvetica, sans-serif";
 const letterSpacing = "normal";
 const fontSize = 12;
+
+const defaultFont = sansSerif
+export {defaultFont}
+
+
 // *
 // * Layout
 // *
@@ -69,6 +90,8 @@ const baseLabelStyles = {
 const labelStyles = assign({
   textAnchor: "start"
 }, baseLabelStyles);
+
+export {labelStyles}
 // *
 // * Strokes
 // *
