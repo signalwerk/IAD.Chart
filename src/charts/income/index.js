@@ -1,155 +1,148 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { VictoryLine, VictoryLabel, VictoryBar, VictoryChart, VictoryAxis, VictoryTheme, VictoryStack } from 'victory';
+import React from "react";
+import ReactDOM from "react-dom";
+import { assign, clone } from "lodash";
+import {
+  VictoryLine,
+  VictoryLabel,
+  VictoryBar,
+  VictoryChart,
+  VictoryAxis,
+  VictoryTheme,
+  VictoryStack
+} from "victory";
 // import Theme from './theme.js';
-import ThemeSignalwerk from '../theme'
-import {IAD2017_S2, clipBestWorst, average} from './incomeHF2017_Semester2.js';
+import ThemeSignalwerk, { strokes, defaultFont, labelStyles } from "../theme";
+import { IAD2017_S2 } from "./incomeHF2017_Semester2.js";
+import { IAD2017_S4 } from "./incomeHF2017_Semester4.js";
+import { clipBestWorst, average } from "./util.js";
 
-let colorF = "#c43a31"
-let colorM = "#2b517f"
-""
+let colorF = "#c43a31";
+let colorM = "#2b517f";
+
 // const Theme = VictoryTheme.material;
-const Theme = ThemeSignalwerk;
 
-let renderChart = (dataIn) => {
+let renderChart = dataIn => {
+  return (
+    <div>
+      <VictoryChart
+        height={400 + 75}
+        padding={{ top: 50, left: 50, right: 0, bottom: 50 + 75 }}
+        domainPadding={{ x: [30, 75] }}
+        theme={ThemeSignalwerk}
+      >
+        <VictoryAxis
+          tickValues={dataIn.map((item, index) => index + 1)}
+          tickFormat={y => dataIn[y - 1].caption}
+        />
 
-  let data = dataIn.map((item, index) => {
-    item._index = index;
-    return item;
-  })
+        <VictoryAxis
+          dependentAxis
+          tickFormat={x => `${x / 1000} K`}
+          tickValues={[64000, 66000, 68000, 70000, 72000, 74000]}
+        />
 
-  var avg = average(data);
-  var avgM = average(data, "m");
-  var avgF = average(data, "f");
+        <VictoryLabel
+          x={55}
+          y={420}
+          style={[
+            { fontSize: "24px", fill: strokes[0].stroke },
+            { fontSize: "24px", fill: strokes[4].stroke },
+            { fontSize: "24px", fill: strokes[1].stroke }
+          ]}
+          lineHeight={1.4 / 24 * 12}
+          text={`■\n■\n■`}
+        />
 
-  return <div><VictoryChart
-    domainPadding={10}
-    theme={Theme}
-  >
-    <VictoryAxis
-      tickValues={data.map((item) => item._index)}
-      tickFormat={(y) => (data[y].gender)}
-      domain={[-1, data.length]}
-    />
+        <VictoryLabel
+          x={80}
+          y={420}
+          lineHeight={1.4}
+          style={{ fill: "black", fontSize: "12px", fontFamily: defaultFont }}
+          text={`Frauen\nDurchschnitt\nMänner`}
+        />
 
+        {/* Red annotation line */}
+        <VictoryLine
+          style={{
+            data: { stroke: strokes[0].stroke },
+            parent: { border: "1px solid #ccc" }
+          }}
+          data={dataIn.map((item, index) => {
+            return { x: index + 1, y: average(item.data, "f") };
+          })}
+        />
 
-    <VictoryAxis
+        <VictoryLine
+          style={{
+            data: { stroke: strokes[4].stroke },
+            parent: { border: "1px solid #ccc" }
+          }}
+          data={dataIn.map((item, index) => {
+            return { x: index + 1, y: average(item.data) };
+          })}
+        />
+        <VictoryLine
+          style={{
+            data: { stroke: strokes[1].stroke },
+            parent: { border: "1px solid #ccc" }
+          }}
+          data={dataIn.map((item, index) => {
+            return { x: index + 1, y: average(item.data, "m") };
+          })}
+        />
+      </VictoryChart>
 
-      dependentAxis
-      tickValues={[
-        20000,
-        50000,
-        60000,
-        70000,
-        80000,
-        90000,
-      ]}
-      tickFormat={(x) => (`${x / 1000}k                           `)}
-      orientation="left"
+      <table>
+        <thead>
+          <tr>
+            <th />
+            <th style={{ color: strokes[0].stroke }}>Frauen</th>
+            <th style={{ color: strokes[4].stroke }}>Durchschnitt</th>
+            <th style={{ color: strokes[1].stroke }}>Männer</th>
+          </tr>
+        </thead>
+        <tbody>
+          {dataIn.map((item, index) => {
+            // return { x: index + 1, y: average(item.data, "m") };
 
-
-    />
-    {/*  axisLabelComponent={<VictoryLabel dx={-45}/>} */}
-    <VictoryBar
-      data={data}
-
-      y={"CHF"}
-      x={"_index"}
-    />
-
-
-    {/* Red annotation line */}
-    <VictoryLine
-      style={{
-        data: { stroke: colorF },
-        parent: { border: "1px solid #ccc"}
-      }}
-      data={[
-        {x: -1, y: avgF},
-        {x: data.length , y: avgF}
-      ]}
-      standalone={false}
-    />
-    <VictoryLine
-      style={{
-        data: { stroke: colorM },
-        parent: { border: "1px solid #ccc"}
-      }}
-      data={[
-        {x: -1, y: avgM},
-        {x: data.length , y: avgM}
-      ]}
-      standalone={false}
-    />
-
-
-
-  </VictoryChart>
-
-
-
-  <table>
-    <thead>
-
-    <tr>
-      <th></th>
-      <th>CHF</th>
-      <th>%</th>
-    </tr>
-  </thead>
-  <tbody>
-
-    <tr>
-      <td><strong>Durchschnitt</strong></td>
-      <td>CHF {Math.round(avg)}.–</td>
-      <td>100%</td>
-    </tr>
-    <tr>
-      <td><strong style={{color: colorM}}>Männer</strong></td>
-      <td>CHF {Math.round(avgM)}.–</td>
-      <td>{Math.round(100/avg*avgM*100)/100}%</td>
-    </tr>
-    <tr>
-      <td><strong style={{color: colorF}}>Frauen</strong></td>
-      <td>CHF {Math.round(avgF)}.–</td>
-      <td>{Math.round(100/avg*avgF*100)/100}%</td>
-    </tr>
-  </tbody>
-
-  </table>
-
-
-
-
+            return (
+              <tr>
+                <td>
+                  <strong>{item.caption}</strong>
+                </td>
+                <td>CHF {Math.round(average(item.data, "m"))}.–</td>
+                <td>CHF {Math.round(average(item.data, "f"))}.–</td>
+                <td>CHF {Math.round(average(item.data))}.–</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
-}
-
-
-let sampleData = [
-    { x: 1, y: 2 },
-    { x: 2, y: 3 },
-    { x: 3, y: 5 },
-    { x: 4, y: 4 },
-    { x: 5, y: 7 }
-  ];
+  );
+};
 
 export default class Income extends React.Component {
   render() {
+    let data = [IAD2017_S2, IAD2017_S4];
 
-    let data = IAD2017_S2;
-    let dataClip = clipBestWorst(IAD2017_S2);
+    let clipData = [];
+    data.forEach(item => {
+      let newItem = clone(item);
+      newItem.data = clipBestWorst(newItem.data);
+      clipData.push(newItem);
+    });
 
+    console.log(data);
+    console.log(clipData);
 
     return (
       <div>
-
         <h3>Einkommen</h3>
-          {renderChart(data)}
-          <h3>Einkommen – bereinigt</h3>
-          <p> Höchst- und Tiefstverdienende gestrichen</p>
-          {renderChart(dataClip)}
-
-
+        {renderChart(data)}
+        <h3>Einkommen – bereinigt</h3>
+        <p> Höchst- und Tiefstverdienende gestrichen</p>
+        {renderChart(clipData)}
       </div>
     );
   }
