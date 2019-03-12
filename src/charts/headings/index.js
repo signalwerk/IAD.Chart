@@ -2,7 +2,7 @@ import React from "react";
 import Data from "./data";
 import { assign } from "lodash";
 
-import ThemeSignalwerk, { strokes, defaultFont, labelStyles } from "../theme";
+import ThemeSignalwerk, { colors, strokes, defaultFont, labelStyles, blockStyles } from "../theme";
 import { yAxis } from "../theme";
 import {
   VictoryBar,
@@ -18,7 +18,7 @@ import {
 let cutOff = 0.8;
 let percentageScale = 1 / (1.5 - cutOff) * 2.5;
 
-export default class Smartphonesale extends React.Component {
+export default class Headings extends React.Component {
   render() {
     let showDetail = this.props.showDetail;
     return (
@@ -32,23 +32,21 @@ export default class Smartphonesale extends React.Component {
           <VictoryLabel
             x={55}
             y={420}
-            style={[
-              { fontSize: "24px", fill: strokes[0].stroke },
-              { fontSize: "24px", fill: strokes[2].stroke },
-              { fontSize: "24px", fill: strokes[1].stroke },
-              { fontSize: "24px", fill: strokes[3].stroke }
-            ]}
+            style={blockStyles}
             lineHeight={1.4 / 24 * 12}
-            text={`■\n■\n■\n■`}
+            text={["■", "■", "■", "■"]}
           />
           <VictoryLabel
             x={80}
             y={420}
             lineHeight={1.4}
             style={{ fill: "black", fontSize: "12px", fontFamily: defaultFont }}
-            text={`${Data.W3C.title}\n${Data.bootstrap.title}\n${
-              Data.foundation.title
-            } – Desktop\n${Data.foundation.title} – Mobile`}
+            text={[
+              Data.W3C.title,
+              Data.bootstrap.title,
+              `${Data.foundation.title} – Desktop`,
+              `${Data.foundation.title} – Mobile`
+            ]}
           />
           <VictoryAxis
             tickValues={[6, 5, 4, 3, 2, 1]}
@@ -129,12 +127,7 @@ export default class Smartphonesale extends React.Component {
             <VictoryGroup
               offset={10}
               style={{ data: { width: 6 } }}
-              colorScale={[
-                strokes[0].stroke,
-                strokes[2].stroke,
-                strokes[1].stroke,
-                strokes[3].stroke
-              ]}
+              colorScale={colors}
             >
               <VictoryBar
                 standalone

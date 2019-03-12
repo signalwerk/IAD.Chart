@@ -8,10 +8,11 @@ import {
   VictoryChart,
   VictoryAxis,
   VictoryTheme,
-  VictoryStack
+  VictoryStack,
+  VictoryContainer
 } from "victory";
 // import Theme from './theme.js';
-import ThemeSignalwerk, { strokes, defaultFont, labelStyles } from "../theme";
+import ThemeSignalwerk, { colors, strokes, defaultFont, labelStyles, blockStyles } from "../theme";
 import { IAD2017_S2 } from "./incomeHF2017_Semester2.js";
 import { IAD2017_S4 } from "./incomeHF2017_Semester4.js";
 import { clipBestWorst, average } from "./util.js";
@@ -21,14 +22,52 @@ let colorM = "#2b517f";
 
 // const Theme = VictoryTheme.material;
 
-let renderChart = dataIn => {
+let renderTab = dataIn => {
   return (
-    <div>
+    <table>
+      <thead>
+        <tr>
+          <th />
+          <th style={{ color: colors[0] }}>Frauen</th>
+          <th style={{ color: colors[1] }}>Durchschnitt</th>
+          <th style={{ color: colors[2] }}>Männer</th>
+        </tr>
+      </thead>
+      <tbody>
+        {dataIn.map((item, index) => {
+          // return { x: index + 1, y: average(item.data, "m") };
+
+          return (
+            <tr>
+              <td>
+                <strong>{item.caption}</strong>
+              </td>
+              <td>CHF {Math.round(average(item.data, "f"))}.–</td>
+                <td>CHF {Math.round(average(item.data))}.–</td>
+              <td>CHF {Math.round(average(item.data, "m"))}.–</td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  );
+};
+
+let renderChart = dataIn => {
+  let width = 600;
+  let height = 475;
+  return (
+    <svg
+      viewBox={`0 0 ${width} ${height}`}
+      style={{ pointerEvents: "all", width: "100%", height: "100%" }}
+    >
       <VictoryChart
-        height={400 + 75}
+        width={width}
+        height={height}
         padding={{ top: 50, left: 50, right: 0, bottom: 50 + 75 }}
         domainPadding={{ x: [30, 75] }}
         theme={ThemeSignalwerk}
+        standalone={false}
       >
         <VictoryAxis
           tickValues={dataIn.map((item, index) => index + 1)}
@@ -38,34 +77,29 @@ let renderChart = dataIn => {
         <VictoryAxis
           dependentAxis
           tickFormat={x => `${x / 1000} K`}
-          tickValues={[64000, 66000, 68000, 70000, 72000, 74000]}
+          tickValues={[62000,64000, 66000, 68000, 70000, 72000, 74000]}
         />
 
         <VictoryLabel
           x={55}
           y={420}
-          style={[
-            { fontSize: "24px", fill: strokes[0].stroke },
-            { fontSize: "24px", fill: strokes[4].stroke },
-            { fontSize: "24px", fill: strokes[1].stroke }
-          ]}
+          style={blockStyles}
           lineHeight={1.4 / 24 * 12}
-          text={`■\n■\n■`}
+          text={["■", "■" ,"■"]}
         />
 
         <VictoryLabel
           x={80}
           y={420}
           lineHeight={1.4}
-          style={{ fill: "black", fontSize: "12px", fontFamily: defaultFont }}
-          text={`Frauen\nDurchschnitt\nMänner`}
+          style={labelStyles}
+          text={["Frauen", "Durchschnitt" ,"Männer"]}
         />
 
         {/* Red annotation line */}
         <VictoryLine
           style={{
-            data: { stroke: strokes[0].stroke },
-            parent: { border: "1px solid #ccc" }
+            data:  strokes[0] ,
           }}
           data={dataIn.map((item, index) => {
             return { x: index + 1, y: average(item.data, "f") };
@@ -74,8 +108,7 @@ let renderChart = dataIn => {
 
         <VictoryLine
           style={{
-            data: { stroke: strokes[4].stroke },
-            parent: { border: "1px solid #ccc" }
+            data: strokes[1] ,
           }}
           data={dataIn.map((item, index) => {
             return { x: index + 1, y: average(item.data) };
@@ -83,44 +116,26 @@ let renderChart = dataIn => {
         />
         <VictoryLine
           style={{
-            data: { stroke: strokes[1].stroke },
-            parent: { border: "1px solid #ccc" }
+            data: strokes[2] ,
           }}
           data={dataIn.map((item, index) => {
             return { x: index + 1, y: average(item.data, "m") };
           })}
         />
       </VictoryChart>
-
-      <table>
-        <thead>
-          <tr>
-            <th />
-            <th style={{ color: strokes[0].stroke }}>Frauen</th>
-            <th style={{ color: strokes[4].stroke }}>Durchschnitt</th>
-            <th style={{ color: strokes[1].stroke }}>Männer</th>
-          </tr>
-        </thead>
-        <tbody>
-          {dataIn.map((item, index) => {
-            // return { x: index + 1, y: average(item.data, "m") };
-
-            return (
-              <tr>
-                <td>
-                  <strong>{item.caption}</strong>
-                </td>
-                <td>CHF {Math.round(average(item.data, "m"))}.–</td>
-                <td>CHF {Math.round(average(item.data, "f"))}.–</td>
-                <td>CHF {Math.round(average(item.data))}.–</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
+    </svg>
   );
 };
+
+class sIncome extends React.Component {
+  render() {
+    let data = [IAD2017_S2, IAD2017_S4];
+
+    return renderChart(data);
+  }
+}
+
+export { sIncome as SSRincome };
 
 export default class Income extends React.Component {
   render() {
@@ -133,16 +148,15 @@ export default class Income extends React.Component {
       clipData.push(newItem);
     });
 
-    console.log(data);
-    console.log(clipData);
-
     return (
       <div>
         <h3>Einkommen</h3>
         {renderChart(data)}
+        {renderTab(data)}
         <h3>Einkommen – bereinigt</h3>
         <p> Höchst- und Tiefstverdienende gestrichen</p>
         {renderChart(clipData)}
+        {renderTab(clipData)}
       </div>
     );
   }
