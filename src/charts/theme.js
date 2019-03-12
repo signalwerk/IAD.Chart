@@ -14,39 +14,13 @@ const colorD = "#91bfdb";
 const colorE = "#fee090";
 const colorF = "#ff00ff";
 
-const yellow200 = "#FFF59D";
-const deepOrange600 = "#F4511E";
-const lime300 = "#DCE775";
-const lightGreen500 = "#8BC34A";
-const teal700 = "#00796B";
-const cyan900 = "#006064";
 const blueGrey50 = "#ECEFF1";
-const blueGrey300 = "#90A4AE";
 const blueGrey700 = "#455A64";
 const grey900 = "#212121";
 
-// const colors = [
-//   deepOrange600,
-//   yellow200,
-//   lime300,
-//   lightGreen500,
-//   teal700,
-//   cyan900
-// ];
-
 let colors = [colorA, colorB, colorC, colorD, colorE, colorF];
 
-// colors = [
-//   "#000000",
-//   "#000000",
-//   "#000000",
-//   "#000000",
-//   "#000000",
-//   "#000000",
-// ];
-
 // sh
-
 const strokes = [
   { stroke: colorA, strokeWidth: "0.2rem" },
   { stroke: colorB, strokeWidth: "0.2rem" },
@@ -55,6 +29,7 @@ const strokes = [
   { stroke: colorE, strokeWidth: "0.2rem" },
   { stroke: colorF, strokeWidth: "0.2rem" }
 ];
+
 const strokesPrint = [
   { stroke: "black" },
   { stroke: "black", strokeDasharray: "8,7" },
@@ -62,6 +37,7 @@ const strokesPrint = [
   { stroke: "black" },
   { stroke: "black", strokeDasharray: "0.01,3" }
 ];
+
 export { strokes };
 
 const cGrey300 = "#969696";
@@ -111,12 +87,12 @@ const labelStyles = assign(
   baseLabelStyles
 );
 
-
-
-const blockStyles = colors.map(item => Object.assign( {
-  fontSize: "24px",
-  fill: item
-}))
+const blockStyles = colors.map(item =>
+  Object.assign({
+    fontSize: "24px",
+    fill: item
+  })
+);
 
 // const blockStyles = [
 //   assign(

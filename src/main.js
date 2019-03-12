@@ -21,11 +21,6 @@ class Main extends React.Component {
 
         <h2>Verkäufe Smartphone</h2>
         <Smartphonesale />
-
-        {/*
-          <h2>Smartphone Verkäufe</h2>
-          <Smartphonesale />
-        */}
       </div>
     );
   }
