@@ -11,7 +11,7 @@ class Main extends React.Component {
       <div style={{ width: "600px", margin: "0 auto" }}>
         <h2>Jahreseinkommen – HF2017</h2>
         <Income />
-
+{/*
         <h2>Headings</h2>
         <h3>Vergleich</h3>
 
@@ -21,6 +21,7 @@ class Main extends React.Component {
 
         <h2>Verkäufe Smartphone</h2>
         <Smartphonesale />
+        */}
       </div>
     );
   }
