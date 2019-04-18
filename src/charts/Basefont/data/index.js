@@ -2,14 +2,14 @@ const data = {
   noResponsive: {
     title: "Nicht Responsiv",
     fontSize: [
-      { width: 200, value: 15 },
-      { width: 300, value: 15 },
-      { width: 500, value: 15 },
-      { width: 700, value: 15 },
-      { width: 900, value: 15 },
-      { width: 1100, value: 15 },
-      { width: 1300, value: 15 },
-      { width: 1400, value: 15 }
+      { width: 200, value: 14 },
+      { width: 300, value: 14 },
+      { width: 500, value: 14 },
+      { width: 700, value: 14 },
+      { width: 900, value: 14 },
+      { width: 1100, value: 14 },
+      { width: 1300, value: 14 },
+      { width: 1400, value: 14 }
     ]
   },
   breakPoints: {
@@ -25,9 +25,9 @@ const data = {
       { width: 900, value: 14 },
       { width: 1100, value: 14 },
       { width: 1100, value: 15 },
+      { width: 1100, value: 15 },
       { width: 1300, value: 15 },
-      { width: 1300, value: 16 },
-      { width: 1400, value: 16 }
+      { width: 1400, value: 15 }
     ]
   },
 

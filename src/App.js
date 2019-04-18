@@ -1,15 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React, { Component } from "react";
+import "./App.css";
 
 import Smartphonesale from "./charts/smartphonesale";
 import Income from "./charts/income";
 import Headings from "./charts/headings";
 import Basefont from "./charts/Basefont";
 
-class Main extends React.Component {
+class App extends Component {
   render() {
     return (
-      <div style={{ width: "600px", margin: "0 auto" }}>
+      <div className="App">
         <Basefont />
         {/*
         <h2>Jahreseinkommen – HF2017</h2>
@@ -29,5 +29,4 @@ class Main extends React.Component {
   }
 }
 
-const app = document.getElementById("app");
-ReactDOM.render(<Main />, app);
+export default App;
