@@ -6,11 +6,16 @@ import Income from "./charts/income";
 import Headings from "./charts/headings";
 import Basefont from "./charts/Basefont";
 import Bookproduction from "./charts/Bookproduction";
+import SpeedOfInformation from "./charts/SpeedOfInformation";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <SpeedOfInformation
+log={true}
+          />
+        <SpeedOfInformation />
         <Bookproduction />
         <Bookproduction
 log={true}
