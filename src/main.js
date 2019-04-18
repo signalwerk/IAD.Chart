@@ -4,14 +4,16 @@ import ReactDOM from "react-dom";
 import Smartphonesale from "./charts/smartphonesale";
 import Income from "./charts/income";
 import Headings from "./charts/headings";
+import Basefont from "./charts/Basefont";
 
 class Main extends React.Component {
   render() {
     return (
       <div style={{ width: "600px", margin: "0 auto" }}>
+        <Basefont />
+        {/*
         <h2>Jahreseinkommen – HF2017</h2>
         <Income />
-{/*
         <h2>Headings</h2>
         <h3>Vergleich</h3>
 
