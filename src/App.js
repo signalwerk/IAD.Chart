@@ -5,13 +5,20 @@ import Smartphonesale from "./charts/smartphonesale";
 import Income from "./charts/income";
 import Headings from "./charts/headings";
 import Basefont from "./charts/Basefont";
+import Bookproduction from "./charts/Bookproduction";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <Bookproduction />
+        <Bookproduction
+log={true}
+          />
+        <br />
+        <br />
+        <br />
         <Basefont />
-        {/*
         <h2>Jahreseinkommen – HF2017</h2>
         <Income />
         <h2>Headings</h2>
@@ -23,7 +30,6 @@ class App extends Component {
 
         <h2>Verkäufe Smartphone</h2>
         <Smartphonesale />
-        */}
       </div>
     );
   }
