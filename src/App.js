@@ -12,14 +12,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SpeedOfInformation
-log={true}
-          />
+        <SpeedOfInformation log={true} />
         <SpeedOfInformation />
         <Bookproduction />
-        <Bookproduction
-log={true}
-          />
+        <Bookproduction log={true} />
         <br />
         <br />
         <br />

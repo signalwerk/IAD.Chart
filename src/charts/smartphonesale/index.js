@@ -22,17 +22,9 @@ import {
 
 export default class Smartphonesale extends React.Component {
   render() {
-    // let countTicks = Array.from(
-    //   { length: 17 },
-    //   (item, index) => index * 100000000
-    // ).filter((item, index) => index % 2 === 0);
-
     let countTicks = [0, 1, 2, 3, 4, 6, 8, 10, 12, 14, 16].map(
       (item, index) => item * 100000000
     );
-
-    // console.log("desktopShipment", Data.desktopShipment());
-    console.log("countTicks", countTicks);
 
     return (
       <div>
@@ -42,7 +34,6 @@ export default class Smartphonesale extends React.Component {
           domainPadding={{ x: [5, 30] }}
           theme={ThemeSignalwerk}
         >
-
           <VictoryLabel
             x={55}
             y={420}
@@ -57,7 +48,6 @@ export default class Smartphonesale extends React.Component {
             style={{ fill: "black", fontSize: "12px", fontFamily: defaultFont }}
             text={["Desktop Computer", "Smartphones"]}
           />
-
 
           <VictoryAxis tickValues={Data.smartphoneYears()} />
 
@@ -85,9 +75,6 @@ export default class Smartphonesale extends React.Component {
             y="total"
           />
 
-          {/*
-</svg>
-*/}
         </VictoryChart>
       </div>
     );

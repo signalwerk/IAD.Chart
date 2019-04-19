@@ -26,10 +26,11 @@ export default class Smartphonesale extends React.Component {
     let countTicks = [];
 
     if (log) {
-      countTicks = [1, 3, 5,  50, 100, 200, 400]
+      countTicks = [1, 3, 5, 50, 100, 200, 400];
     } else {
-      countTicks = [0, 15, 100, 200, 300, 400]
+      countTicks = [0, 15, 100, 200, 300, 400];
     }
+
     return (
       <div>
         <VictoryChart
@@ -38,7 +39,6 @@ export default class Smartphonesale extends React.Component {
           domainPadding={{ x: [5, 30] }}
           theme={ThemeSignalwerk}
           scale={{ x: "linear", y: log ? "log" : "linear" }}
-
         >
           <VictoryLabel
             x={55}
