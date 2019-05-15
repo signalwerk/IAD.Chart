@@ -12,8 +12,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SpeedOfInformation log={true} />
+        <h2>
+          Informationsgeschwindigkeit auf dem Weg nach London im 19.
+          Jahrhunderts
+        </h2>
         <SpeedOfInformation />
+        <h2>Buchproduktion</h2>
         <Bookproduction />
         <Bookproduction log={true} />
         <br />

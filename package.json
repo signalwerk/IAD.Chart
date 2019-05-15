@@ -13,8 +13,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "svg": "mv ./SVG/charts/ ./build",
+    "build:all": "CI=true npm test && npm run build && mv ./SVG/charts ./build/",
+    "test": "mkdir -p ./SVG/charts/ && react-scripts test"
   },
   "eslintConfig": {
     "extends": "react-app"
