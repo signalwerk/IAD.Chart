@@ -30,7 +30,7 @@ let renderTab = dataIn => {
           // return { x: index + 1, y: average(item.data, "m") };
 
           return (
-            <tr>
+            <tr key={index}>
               <td>
                 <strong>{item.caption}</strong>
               </td>
