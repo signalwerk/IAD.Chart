@@ -1,24 +1,8 @@
 import React from "react";
 import Data from "./data";
-import ThemeSignalwerk, {
-  colors,
-  strokes,
-  defaultFont,
-  labelStyles,
-  blockStyles
-} from "../theme";
-import { yAxis } from "../theme";
+import ThemeSignalwerk, { strokes, defaultFont, blockStyles } from "../theme";
 import { abbreviate } from "../../utility/abbreviateNumber";
-import {
-  VictoryBar,
-  VictoryContainer,
-  VictoryLabel,
-  VictoryLine,
-  VictoryChart,
-  VictoryAxis,
-  VictoryTheme,
-  VictoryStack
-} from "victory";
+import { VictoryLabel, VictoryLine, VictoryChart, VictoryAxis } from "victory";
 
 export default class Smartphonesale extends React.Component {
   render() {
@@ -74,7 +58,6 @@ export default class Smartphonesale extends React.Component {
             x="year"
             y="total"
           />
-
         </VictoryChart>
       </div>
     );

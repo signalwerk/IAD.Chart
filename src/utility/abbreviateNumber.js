@@ -19,10 +19,6 @@ export const abbreviateNumber = value => {
 
   let normalisedValue = value / Math.pow(1000, suffixIndex);
 
-  let precision = 2;
-  if (normalisedValue < 1) {
-    precision = 1;
-  }
 
   const suffixes = ["", " k", " Mio.", " Mia.", " Bio."];
 

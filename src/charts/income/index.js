@@ -1,24 +1,16 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { assign, clone } from "lodash";
-import {
-  VictoryLine,
-  VictoryLabel,
-  VictoryBar,
-  VictoryChart,
-  VictoryAxis,
-  VictoryTheme,
-  VictoryStack,
-  VictoryContainer
-} from "victory";
+import { clone } from "lodash";
+import { VictoryLine, VictoryLabel, VictoryChart, VictoryAxis } from "victory";
 // import Theme from './theme.js';
-import ThemeSignalwerk, { colors, strokes, defaultFont, labelStyles, blockStyles } from "../theme";
+import ThemeSignalwerk, {
+  colors,
+  strokes,
+  labelStyles,
+  blockStyles
+} from "../theme";
 import { IAD2017_S2 } from "./incomeHF2017_Semester2.js";
 import { IAD2017_S4 } from "./incomeHF2017_Semester4.js";
 import { clipBestWorst, average } from "./util.js";
-
-let colorF = "#c43a31";
-let colorM = "#2b517f";
 
 // const Theme = VictoryTheme.material;
 
@@ -43,7 +35,7 @@ let renderTab = dataIn => {
                 <strong>{item.caption}</strong>
               </td>
               <td>CHF {Math.round(average(item.data, "f"))}.–</td>
-                <td>CHF {Math.round(average(item.data))}.–</td>
+              <td>CHF {Math.round(average(item.data))}.–</td>
               <td>CHF {Math.round(average(item.data, "m"))}.–</td>
             </tr>
           );
@@ -77,15 +69,15 @@ let renderChart = dataIn => {
         <VictoryAxis
           dependentAxis
           tickFormat={x => `${x / 1000} K`}
-          tickValues={[62000,64000, 66000, 68000, 70000, 72000, 74000]}
+          tickValues={[62000, 64000, 66000, 68000, 70000, 72000, 74000]}
         />
 
         <VictoryLabel
           x={55}
           y={420}
           style={blockStyles}
-          lineHeight={1.4 / 24 * 12}
-          text={["■", "■" ,"■"]}
+          lineHeight={(1.4 / 24) * 12}
+          text={["■", "■", "■"]}
         />
 
         <VictoryLabel
@@ -93,13 +85,13 @@ let renderChart = dataIn => {
           y={420}
           lineHeight={1.4}
           style={labelStyles}
-          text={["Frauen", "Durchschnitt" ,"Männer"]}
+          text={["Frauen", "Durchschnitt", "Männer"]}
         />
 
         {/* Red annotation line */}
         <VictoryLine
           style={{
-            data:  strokes[0] ,
+            data: strokes[0]
           }}
           data={dataIn.map((item, index) => {
             return { x: index + 1, y: average(item.data, "f") };
@@ -108,7 +100,7 @@ let renderChart = dataIn => {
 
         <VictoryLine
           style={{
-            data: strokes[1] ,
+            data: strokes[1]
           }}
           data={dataIn.map((item, index) => {
             return { x: index + 1, y: average(item.data) };
@@ -116,7 +108,7 @@ let renderChart = dataIn => {
         />
         <VictoryLine
           style={{
-            data: strokes[2] ,
+            data: strokes[2]
           }}
           data={dataIn.map((item, index) => {
             return { x: index + 1, y: average(item.data, "m") };

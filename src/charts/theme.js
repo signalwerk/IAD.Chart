@@ -30,18 +30,17 @@ const strokes = [
   { stroke: colorF, strokeWidth: "0.2rem" }
 ];
 
-const strokesPrint = [
-  { stroke: "black" },
-  { stroke: "black", strokeDasharray: "8,7" },
-  { stroke: "black", strokeDasharray: "0.01,8" },
-  { stroke: "black" },
-  { stroke: "black", strokeDasharray: "0.01,3" }
-];
+// const strokesPrint = [
+//   { stroke: "black" },
+//   { stroke: "black", strokeDasharray: "8,7" },
+//   { stroke: "black", strokeDasharray: "0.01,8" },
+//   { stroke: "black" },
+//   { stroke: "black", strokeDasharray: "0.01,3" }
+// ];
 
 export { strokes };
 
 const cGrey300 = "#969696";
-const cGrey700 = "#455A64";
 const cBlack = "#000000";
 
 const cLabelFill = "#000000";

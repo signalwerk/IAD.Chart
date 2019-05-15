@@ -2,21 +2,24 @@ import React from "react";
 import Data from "./data";
 import { assign } from "lodash";
 
-import ThemeSignalwerk, { colors, strokes, defaultFont, labelStyles, blockStyles } from "../theme";
-import { yAxis } from "../theme";
+import ThemeSignalwerk, {
+  colors,
+  strokes,
+  defaultFont,
+  blockStyles
+} from "../theme";
+
 import {
   VictoryBar,
-  VictoryContainer,
   VictoryLabel,
   VictoryLine,
   VictoryChart,
   VictoryAxis,
-  VictoryStack,
   VictoryGroup
 } from "victory";
 
 let cutOff = 0.8;
-let percentageScale = 1 / (1.5 - cutOff) * 2.5;
+let percentageScale = (1 / (1.5 - cutOff)) * 2.5;
 
 export default class Headings extends React.Component {
   render() {
@@ -33,7 +36,7 @@ export default class Headings extends React.Component {
             x={55}
             y={420}
             style={blockStyles}
-            lineHeight={1.4 / 24 * 12}
+            lineHeight={(1.4 / 24) * 12}
             text={["■", "■", "■", "■"]}
           />
           <VictoryLabel
@@ -61,7 +64,7 @@ export default class Headings extends React.Component {
             style={assign(
               {
                 grid: assign(
-                  { strokeDasharray: t => (t == 1 ? "none" : "0, 6") },
+                  { strokeDasharray: t => (t === 1 ? "none" : "0, 6") },
 
                   ThemeSignalwerk.dependentAxis.grid
                 )
@@ -135,7 +138,7 @@ export default class Headings extends React.Component {
                   y:
                     index === 0
                       ? 0
-                      : (1 / data[index - 1].value * item.value - cutOff) *
+                      : ((1 / data[index - 1].value) * item.value - cutOff) *
                         percentageScale,
                   x: item.order
                 }))}
@@ -149,7 +152,7 @@ export default class Headings extends React.Component {
                     y:
                       index === 0
                         ? 0
-                        : (1 / data[index - 1].value * item.value - cutOff) *
+                        : ((1 / data[index - 1].value) * item.value - cutOff) *
                           percentageScale,
                     x: item.order
                   }))}
@@ -163,7 +166,7 @@ export default class Headings extends React.Component {
                     y:
                       index === 0
                         ? 0
-                        : (1 / data[index - 1].value * item.value - cutOff) *
+                        : ((1 / data[index - 1].value) * item.value - cutOff) *
                           percentageScale,
                     x: item.order
                   }))}
@@ -177,7 +180,7 @@ export default class Headings extends React.Component {
                     y:
                       index === 0
                         ? 0
-                        : (1 / data[index - 1].value * item.value - cutOff) *
+                        : ((1 / data[index - 1].value) * item.value - cutOff) *
                           percentageScale,
                     x: item.order
                   }))}

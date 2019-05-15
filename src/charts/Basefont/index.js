@@ -1,32 +1,11 @@
 import React from "react";
 import Data from "./data";
-import { assign } from "lodash";
 
-import ThemeSignalwerk, {
-  colors,
-  strokes,
-  defaultFont,
-  labelStyles,
-  blockStyles
-} from "../theme";
-import { yAxis } from "../theme";
-import {
-  VictoryBar,
-  VictoryContainer,
-  VictoryLabel,
-  VictoryLine,
-  VictoryChart,
-  VictoryAxis,
-  VictoryStack,
-  VictoryGroup
-} from "victory";
-
-let cutOff = 0.8;
-let percentageScale = 1 / (1.5 - cutOff) * 2.5;
+import ThemeSignalwerk, { strokes, defaultFont, blockStyles } from "../theme";
+import { VictoryLabel, VictoryLine, VictoryChart, VictoryAxis } from "victory";
 
 export default class Headings extends React.Component {
   render() {
-    let showDetail = this.props.showDetail;
     return (
       <div>
         <VictoryChart
@@ -39,7 +18,7 @@ export default class Headings extends React.Component {
             x={55}
             y={420}
             style={blockStyles}
-            lineHeight={1.4 / 24 * 12}
+            lineHeight={(1.4 / 24) * 12}
             text={["■", "■", "■", "■"]}
           />
           <VictoryLabel

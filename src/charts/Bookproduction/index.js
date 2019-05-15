@@ -1,26 +1,9 @@
 import React from "react";
 import Bookproduction from "./data";
-import { assign } from "lodash";
 import { abbreviate } from "../../utility/abbreviateNumber";
 
-import ThemeSignalwerk, {
-  colors,
-  strokes,
-  defaultFont,
-  labelStyles,
-  blockStyles
-} from "../theme";
-import { yAxis } from "../theme";
-import {
-  VictoryBar,
-  VictoryContainer,
-  VictoryLabel,
-  VictoryLine,
-  VictoryChart,
-  VictoryAxis,
-  VictoryStack,
-  VictoryGroup
-} from "victory";
+import ThemeSignalwerk, { strokes, defaultFont, blockStyles } from "../theme";
+import { VictoryLabel, VictoryLine, VictoryChart, VictoryAxis } from "victory";
 
 export default class Basefont extends React.Component {
   render() {

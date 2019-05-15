@@ -1,7 +1,7 @@
 import React from "react";
 import SpeedOfInformation from "./data";
-import ThemeSignalwerk, { strokes, defaultFont, blockStyles } from "../theme";
-import { VictoryLabel, VictoryLine, VictoryChart, VictoryAxis } from "victory";
+import ThemeSignalwerk, { strokes } from "../theme";
+import { VictoryLine, VictoryChart, VictoryAxis } from "victory";
 
 export default class Smartphonesale extends React.Component {
   render() {
@@ -16,7 +16,6 @@ export default class Smartphonesale extends React.Component {
           theme={ThemeSignalwerk}
           scale={{ x: "linear", y: "linear" }}
         >
-
           <VictoryAxis
             tickValues={[1790, 1800, 1820, 1840, 1860, 1880, 1900]}
           />
