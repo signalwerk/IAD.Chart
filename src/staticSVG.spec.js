@@ -3,7 +3,7 @@ import ReactDOMServer from "react-dom/server";
 import fs from "fs";
 
 import Smartphonesale from "./charts/smartphonesale";
-import Income from "./charts/income";
+import { SSRincome } from "./charts/income";
 import Headings from "./charts/headings";
 import Basefont from "./charts/Basefont";
 import Bookproduction from "./charts/Bookproduction";
@@ -31,7 +31,7 @@ let exportSVG = [
   },
 
   {
-    chart: <Income />,
+    chart: <SSRincome />,
     filename: "IAD2017_income"
   },
 
@@ -64,9 +64,7 @@ const StaticSVG = value => {
 
 // export default StaticSVG;
 
-
-
-it('write svg with a test... 🙈', () => {
-  StaticSVG()
+it("write svg with a test... 🙈", () => {
+  StaticSVG();
   expect(3).toEqual(3);
 });

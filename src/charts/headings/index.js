@@ -6,7 +6,8 @@ import ThemeSignalwerk, {
   colors,
   strokes,
   defaultFont,
-  blockStyles
+  blockStyles,
+  dimensions
 } from "../theme";
 
 import {
@@ -24,13 +25,19 @@ let percentageScale = (1 / (1.5 - cutOff)) * 2.5;
 export default class Headings extends React.Component {
   render() {
     let showDetail = this.props.showDetail;
+    let { width, height } = dimensions;
     return (
-      <div>
+      <svg
+        viewBox={`0 0 ${width} ${height}`}
+        style={{ pointerEvents: "all", width: "100%", height: "100%" }}
+      >
         <VictoryChart
-          height={400 + 75}
+          width={width}
+          height={height}
           padding={{ top: 50, left: 50, right: 80, bottom: 50 + 75 }}
           domainPadding={{ x: [30, 30] }}
           theme={ThemeSignalwerk}
+          standalone={false}
         >
           <VictoryLabel
             x={55}
@@ -188,7 +195,7 @@ export default class Headings extends React.Component {
             </VictoryGroup>
           )}
         </VictoryChart>
-      </div>
+      </svg>
     );
   }
 }

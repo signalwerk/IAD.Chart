@@ -6,7 +6,8 @@ import ThemeSignalwerk, {
   colors,
   strokes,
   labelStyles,
-  blockStyles
+  blockStyles,
+  dimensions
 } from "../theme";
 import { IAD2017_S2 } from "./incomeHF2017_Semester2.js";
 import { IAD2017_S4 } from "./incomeHF2017_Semester4.js";
@@ -46,8 +47,7 @@ let renderTab = dataIn => {
 };
 
 let renderChart = dataIn => {
-  let width = 600;
-  let height = 475;
+  let { width, height } = dimensions;
   return (
     <svg
       viewBox={`0 0 ${width} ${height}`}

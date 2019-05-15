@@ -2,7 +2,12 @@ import React from "react";
 import Bookproduction from "./data";
 import { abbreviate } from "../../utility/abbreviateNumber";
 
-import ThemeSignalwerk, { strokes, defaultFont, blockStyles } from "../theme";
+import ThemeSignalwerk, {
+  strokes,
+  defaultFont,
+  blockStyles,
+  dimensions
+} from "../theme";
 import { VictoryLabel, VictoryLine, VictoryChart, VictoryAxis } from "victory";
 
 export default class Basefont extends React.Component {
@@ -22,14 +27,20 @@ export default class Basefont extends React.Component {
       );
     }
 
+    let { width, height } = dimensions;
     return (
-      <div>
+      <svg
+        viewBox={`0 0 ${width} ${height}`}
+        style={{ pointerEvents: "all", width: "100%", height: "100%" }}
+      >
         <VictoryChart
-          height={400 + 75}
+          width={width}
+          height={height}
           padding={{ top: 50, left: 60, right: 50, bottom: 50 + 75 }}
           domainPadding={{ x: [0, 30] }}
           theme={ThemeSignalwerk}
           scale={{ x: "linear", y: log ? "log" : "linear" }}
+          standalone={false}
         >
           <VictoryLabel
             x={55}
@@ -76,7 +87,7 @@ export default class Basefont extends React.Component {
             }))}
           />
         </VictoryChart>
-      </div>
+      </svg>
     );
   }
 }

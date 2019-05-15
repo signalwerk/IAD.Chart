@@ -62,7 +62,7 @@ export { defaultFont, colors };
 const padding = 8;
 const baseProps = {
   width: 600,
-  height: 600 / 3 * 2,
+  height: (600 / 3) * 2,
   padding: 50,
   colorScale: colors
 };
@@ -391,6 +391,11 @@ const _yAxis = {
     },
     baseProps
   )
+};
+
+export const dimensions = {
+  width: 600,
+  height: 475
 };
 
 export var yAxis = assign({}, defaultStyle, _yAxis);

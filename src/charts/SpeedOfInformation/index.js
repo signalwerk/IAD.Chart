@@ -1,20 +1,26 @@
 import React from "react";
 import SpeedOfInformation from "./data";
-import ThemeSignalwerk, { strokes } from "../theme";
+import ThemeSignalwerk, { strokes, dimensions } from "../theme";
 import { VictoryLine, VictoryChart, VictoryAxis } from "victory";
 
 export default class Smartphonesale extends React.Component {
   render() {
     let countTicks = [0, 15, 100, 200, 300, 400];
 
+    let { width, height } = dimensions;
     return (
-      <div>
+      <svg
+        viewBox={`0 0 ${width} ${height}`}
+        style={{ pointerEvents: "all", width: "100%", height: "100%" }}
+      >
         <VictoryChart
-          height={400 + 75}
+          width={width}
+          height={height}
           padding={{ top: 50, left: 60, right: 50, bottom: 50 + 75 }}
           domainPadding={{ x: [5, 30] }}
           theme={ThemeSignalwerk}
           scale={{ x: "linear", y: "linear" }}
+          standalone={false}
         >
           <VictoryAxis
             tickValues={[1790, 1800, 1820, 1840, 1860, 1880, 1900]}
@@ -36,7 +42,7 @@ export default class Smartphonesale extends React.Component {
             }))}
           />
         </VictoryChart>
-      </div>
+      </svg>
     );
   }
 }

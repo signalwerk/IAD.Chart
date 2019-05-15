@@ -1,18 +1,29 @@
 import React from "react";
 import Data from "./data";
 
-import ThemeSignalwerk, { strokes, defaultFont, blockStyles } from "../theme";
+import ThemeSignalwerk, {
+  strokes,
+  defaultFont,
+  blockStyles,
+  dimensions
+} from "../theme";
 import { VictoryLabel, VictoryLine, VictoryChart, VictoryAxis } from "victory";
 
 export default class Headings extends React.Component {
   render() {
+    let { width, height } = dimensions;
     return (
-      <div>
+      <svg
+        viewBox={`0 0 ${width} ${height}`}
+        style={{ pointerEvents: "all", width: "100%", height: "100%" }}
+      >
         <VictoryChart
-          height={400 + 75}
+          width={width}
+          height={height}
           padding={{ top: 50, left: 50, right: 50, bottom: 50 + 75 }}
           domainPadding={{ x: [0, 0] }}
           theme={ThemeSignalwerk}
+          standalone={false}
         >
           <VictoryLabel
             x={55}
@@ -84,7 +95,7 @@ export default class Headings extends React.Component {
             }))}
           />
         </VictoryChart>
-      </div>
+      </svg>
     );
   }
 }
