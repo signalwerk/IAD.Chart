@@ -68,7 +68,7 @@ mkdir -p $DEPLOY_DIR
 
 # Run our compile script
 echo "   * build"
-sh ./drone/build.sh
+sh ./ci/build.sh
 
 # restore git
 cd $ROOT_DIR
