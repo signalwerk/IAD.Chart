@@ -11,7 +11,7 @@ import SpeedOfInformation from "./charts/SpeedOfInformation";
 
 let exportSVG = [
   {
-    cart: <SpeedOfInformation />,
+    chart: <SpeedOfInformation />,
     filename: "SpeedOfInformation_km"
   },
 
