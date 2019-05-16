@@ -30,6 +30,7 @@ export default class Basefont extends React.Component {
     let { width, height } = dimensions;
     return (
       <svg
+        xmlns="http://www.w3.org/2000/svg"
         viewBox={`0 0 ${width} ${height}`}
         style={{ pointerEvents: "all", width: "100%", height: "100%" }}
       >
