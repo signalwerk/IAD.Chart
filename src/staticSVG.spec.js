@@ -31,10 +31,22 @@ let exportSVG = [
   },
 
   {
-    chart: <SSRincome />,
+    chart: <SSRincome filter="HF2017" clip={false} />,
     filename: "IAD2017_income"
   },
 
+  {
+    chart: <SSRincome filter="HF2017" clip={true} />,
+    filename: "IAD2017_income_clip"
+  },
+  {
+    chart: <SSRincome filter="HF2019" clip={false} />,
+    filename: "IAD2019_income"
+  },
+  {
+    chart: <SSRincome filter="HF2019" clip={true} />,
+    filename: "IAD2019_income_clip"
+  },
   {
     chart: <Headings />,
     filename: "Headings"

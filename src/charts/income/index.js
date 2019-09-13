@@ -11,6 +11,7 @@ import ThemeSignalwerk, {
 } from "../theme";
 import { IAD2017_S2 } from "./incomeHF2017_Semester2.js";
 import { IAD2017_S4 } from "./incomeHF2017_Semester4.js";
+import { IAD2019_S1 } from "./incomeHF2019_Semester1.js";
 import { clipBestWorst, average } from "./util.js";
 
 // const Theme = VictoryTheme.material;
@@ -46,8 +47,20 @@ let renderTab = dataIn => {
   );
 };
 
-let renderChart = dataIn => {
+let renderChart = (data, clip, axis) => {
   let { width, height } = dimensions;
+
+  let dataIn = [];
+  if (clip) {
+    data.forEach(item => {
+      let newItem = clone(item);
+      newItem.data = clipBestWorst(newItem.data);
+      dataIn.push(newItem);
+    });
+  } else {
+    dataIn = data;
+  }
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +83,7 @@ let renderChart = dataIn => {
         <VictoryAxis
           dependentAxis
           tickFormat={x => `${x / 1000} K`}
-          tickValues={[62000, 64000, 66000, 68000, 70000, 72000, 74000]}
+          tickValues={axis || [62000, 64000, 66000, 68000, 70000, 72000, 74000]}
         />
 
         <VictoryLabel
@@ -120,11 +133,22 @@ let renderChart = dataIn => {
   );
 };
 
+const IAD2019_axis = [56000, 58000, 60000, 62000, 64000, 66000];
+
 class sIncome extends React.Component {
   render() {
-    let data = [IAD2017_S2, IAD2017_S4];
+    let data = [];
+    let axis = null;
+    if (this.props.filter === "HF2017") {
+      data.push(IAD2017_S2, IAD2017_S4);
+    }
 
-    return renderChart(data);
+    if (this.props.filter === "HF2019") {
+      data.push(IAD2019_S1);
+      axis = IAD2019_axis;
+    }
+
+    return renderChart(data, this.props.clip, axis);
   }
 }
 
@@ -132,24 +156,26 @@ export { sIncome as SSRincome };
 
 export default class Income extends React.Component {
   render() {
-    let data = [IAD2017_S2, IAD2017_S4];
+    let data = [];
+    let axis = null;
+    if (this.props.filter === "HF2017") {
+      data.push(IAD2017_S2, IAD2017_S4);
+    }
 
-    let clipData = [];
-    data.forEach(item => {
-      let newItem = clone(item);
-      newItem.data = clipBestWorst(newItem.data);
-      clipData.push(newItem);
-    });
+    if (this.props.filter === "HF2019") {
+      data.push(IAD2019_S1, IAD2019_S1);
+      axis = IAD2019_axis;
+    }
 
     return (
       <div>
         <h3>Einkommen</h3>
-        {renderChart(data)}
-        {renderTab(data)}
+        {renderChart(data, false, axis)}
+        {renderTab(data, false, axis)}
         <h3>Einkommen – bereinigt</h3>
         <p> Höchst- und Tiefstverdienende gestrichen</p>
-        {renderChart(clipData)}
-        {renderTab(clipData)}
+        {renderChart(data, true, axis)}
+        {renderTab(data, true, axis)}
       </div>
     );
   }

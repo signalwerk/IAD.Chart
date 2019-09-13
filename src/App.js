@@ -24,8 +24,12 @@ class App extends Component {
         <br />
         <br />
         <Basefont />
+
+        <h2>Jahreseinkommen – HF2019</h2>
+        <Income filter="HF2019" />
+
         <h2>Jahreseinkommen – HF2017</h2>
-        <Income />
+        <Income filter="HF2017" />
         <h2>Headings</h2>
         <h3>Vergleich</h3>
 
