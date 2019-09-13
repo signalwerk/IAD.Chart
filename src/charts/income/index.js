@@ -144,7 +144,7 @@ class sIncome extends React.Component {
     }
 
     if (this.props.filter === "HF2019") {
-      data.push(IAD2019_S1);
+      data.push(IAD2019_S1, IAD2019_S1);
       axis = IAD2019_axis;
     }
 
