@@ -1,13 +1,8 @@
 import React from "react";
 import Data from "./data";
-import ThemeSignalwerk, {
-  strokes,
-  defaultFont,
-  blockStyles,
-  dimensions
-} from "../theme";
+import ThemeSignalwerk, { strokes, dimensions } from "../theme";
 import { abbreviate } from "../../utility/abbreviateNumber";
-import { VictoryLabel, VictoryLine, VictoryChart, VictoryAxis } from "victory";
+import { VictoryLine, VictoryChart, VictoryAxis } from "victory";
 
 export default class Smartphonesale extends React.Component {
   render() {
@@ -30,7 +25,6 @@ export default class Smartphonesale extends React.Component {
           theme={ThemeSignalwerk}
           standalone={false}
         >
-
           <VictoryAxis tickValues={[1926, 1940, 1960, 1980, 2001, 2018]} />
 
           <VictoryAxis
