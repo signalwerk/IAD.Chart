@@ -7,6 +7,7 @@ import { SSRincome } from "./charts/income";
 import Headings from "./charts/headings";
 import Basefont from "./charts/Basefont";
 import Bookproduction from "./charts/Bookproduction";
+import Letters from "./charts/letters";
 import SpeedOfInformation from "./charts/SpeedOfInformation";
 
 let exportSVG = [
@@ -15,6 +16,10 @@ let exportSVG = [
     filename: "SpeedOfInformation_km"
   },
 
+  {
+    chart: <Letters />,
+    filename: "letters_usa"
+  },
   {
     chart: <Bookproduction />,
     filename: "Bookproduction_linear"

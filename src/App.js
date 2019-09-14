@@ -6,12 +6,16 @@ import Income from "./charts/income";
 import Headings from "./charts/headings";
 import Basefont from "./charts/Basefont";
 import Bookproduction from "./charts/Bookproduction";
+import Letters from "./charts/letters";
 import SpeedOfInformation from "./charts/SpeedOfInformation";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <h2>Briefpost in den USA</h2>
+        <Letters />
+
         <h2>
           Informationsgeschwindigkeit auf dem Weg nach London im 19.
           Jahrhunderts
