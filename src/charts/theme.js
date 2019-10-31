@@ -22,12 +22,12 @@ let colors = [colorA, colorB, colorC, colorD, colorE, colorF];
 
 // sh
 const strokes = [
-  { stroke: colorA, strokeWidth: "0.2rem" },
-  { stroke: colorB, strokeWidth: "0.2rem" },
-  { stroke: colorC, strokeWidth: "0.2rem" },
-  { stroke: colorD, strokeWidth: "0.2rem" },
-  { stroke: colorE, strokeWidth: "0.2rem" },
-  { stroke: colorF, strokeWidth: "0.2rem" }
+  { stroke: colorA, strokeWidth: "5" },
+  { stroke: colorB, strokeWidth: "5" },
+  { stroke: colorC, strokeWidth: "5" },
+  { stroke: colorD, strokeWidth: "5" },
+  { stroke: colorE, strokeWidth: "5" },
+  { stroke: colorF, strokeWidth: "5" }
 ];
 
 // const strokesPrint = [
