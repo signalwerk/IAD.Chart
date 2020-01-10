@@ -1,0 +1,728 @@
+[
+  {
+    "Date": "2009-01",
+    "Desktop": "99.33",
+    "Mobile": "0.67",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2009-02",
+    "Desktop": "99.31",
+    "Mobile": "0.69",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2009-03",
+    "Desktop": "99.2",
+    "Mobile": "0.8",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2009-04",
+    "Desktop": "99.14",
+    "Mobile": "0.86",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2009-05",
+    "Desktop": "99.14",
+    "Mobile": "0.86",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2009-06",
+    "Desktop": "99.06",
+    "Mobile": "0.94",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2009-07",
+    "Desktop": "98.95",
+    "Mobile": "1.05",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2009-08",
+    "Desktop": "98.88",
+    "Mobile": "1.12",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2009-09",
+    "Desktop": "98.88",
+    "Mobile": "1.12",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2009-10",
+    "Desktop": "98.85",
+    "Mobile": "1.15",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2009-11",
+    "Desktop": "98.79",
+    "Mobile": "1.21",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2009-12",
+    "Desktop": "98.72",
+    "Mobile": "1.28",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2010-01",
+    "Desktop": "98.44",
+    "Mobile": "1.56",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2010-02",
+    "Desktop": "98.28",
+    "Mobile": "1.72",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2010-03",
+    "Desktop": "98.04",
+    "Mobile": "1.96",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2010-04",
+    "Desktop": "97.82",
+    "Mobile": "2.18",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2010-05",
+    "Desktop": "97.68",
+    "Mobile": "2.32",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2010-06",
+    "Desktop": "97.43",
+    "Mobile": "2.57",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2010-07",
+    "Desktop": "97.14",
+    "Mobile": "2.86",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2010-08",
+    "Desktop": "96.79",
+    "Mobile": "3.21",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2010-09",
+    "Desktop": "96.5",
+    "Mobile": "3.5",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2010-10",
+    "Desktop": "96.19",
+    "Mobile": "3.81",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2010-11",
+    "Desktop": "95.98",
+    "Mobile": "4.02",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2010-12",
+    "Desktop": "95.9",
+    "Mobile": "4.1",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2011-01",
+    "Desktop": "95.7",
+    "Mobile": "4.3",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2011-02",
+    "Desktop": "95.55",
+    "Mobile": "4.45",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2011-03",
+    "Desktop": "95.3",
+    "Mobile": "4.7",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2011-04",
+    "Desktop": "94.79",
+    "Mobile": "5.21",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2011-05",
+    "Desktop": "94.25",
+    "Mobile": "5.75",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2011-06",
+    "Desktop": "93.47",
+    "Mobile": "6.53",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2011-07",
+    "Desktop": "92.98",
+    "Mobile": "7.02",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2011-08",
+    "Desktop": "92.88",
+    "Mobile": "7.12",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2011-09",
+    "Desktop": "93.26",
+    "Mobile": "6.74",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2011-10",
+    "Desktop": "93.45",
+    "Mobile": "6.55",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2011-11",
+    "Desktop": "93.05",
+    "Mobile": "6.95",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2011-12",
+    "Desktop": "91.96",
+    "Mobile": "8.04",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2012-01",
+    "Desktop": "91.51",
+    "Mobile": "8.49",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2012-02",
+    "Desktop": "91.47",
+    "Mobile": "8.53",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2012-03",
+    "Desktop": "91.01",
+    "Mobile": "8.99",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2012-04",
+    "Desktop": "90.42",
+    "Mobile": "9.58",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2012-05",
+    "Desktop": "89.89",
+    "Mobile": "10.11",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2012-06",
+    "Desktop": "89.6",
+    "Mobile": "10.4",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2012-07",
+    "Desktop": "88.91",
+    "Mobile": "11.09",
+    "Tablet": "0"
+  },
+  {
+    "Date": "2012-08",
+    "Desktop": "85.69",
+    "Mobile": "11.44",
+    "Tablet": "2.86"
+  },
+  {
+    "Date": "2012-09",
+    "Desktop": "85.33",
+    "Mobile": "11.66",
+    "Tablet": "3.01"
+  },
+  {
+    "Date": "2012-10",
+    "Desktop": "85.02",
+    "Mobile": "11.92",
+    "Tablet": "3.06"
+  },
+  {
+    "Date": "2012-11",
+    "Desktop": "84.13",
+    "Mobile": "12.66",
+    "Tablet": "3.22"
+  },
+  {
+    "Date": "2012-12",
+    "Desktop": "82.42",
+    "Mobile": "14.04",
+    "Tablet": "3.54"
+  },
+  {
+    "Date": "2013-01",
+    "Desktop": "82.41",
+    "Mobile": "13.56",
+    "Tablet": "4.03"
+  },
+  {
+    "Date": "2013-02",
+    "Desktop": "81.86",
+    "Mobile": "13.71",
+    "Tablet": "4.43"
+  },
+  {
+    "Date": "2013-03",
+    "Desktop": "81.69",
+    "Mobile": "13.79",
+    "Tablet": "4.52"
+  },
+  {
+    "Date": "2013-04",
+    "Desktop": "82.43",
+    "Mobile": "13.31",
+    "Tablet": "4.27"
+  },
+  {
+    "Date": "2013-05",
+    "Desktop": "81.68",
+    "Mobile": "13.98",
+    "Tablet": "4.33"
+  },
+  {
+    "Date": "2013-06",
+    "Desktop": "80.01",
+    "Mobile": "15.33",
+    "Tablet": "4.66"
+  },
+  {
+    "Date": "2013-07",
+    "Desktop": "78.66",
+    "Mobile": "16.51",
+    "Tablet": "4.83"
+  },
+  {
+    "Date": "2013-08",
+    "Desktop": "78.08",
+    "Mobile": "17.14",
+    "Tablet": "4.78"
+  },
+  {
+    "Date": "2013-09",
+    "Desktop": "78.39",
+    "Mobile": "16.98",
+    "Tablet": "4.63"
+  },
+  {
+    "Date": "2013-10",
+    "Desktop": "76.68",
+    "Mobile": "18.78",
+    "Tablet": "4.54"
+  },
+  {
+    "Date": "2013-11",
+    "Desktop": "76.13",
+    "Mobile": "19.08",
+    "Tablet": "4.78"
+  },
+  {
+    "Date": "2013-12",
+    "Desktop": "72.55",
+    "Mobile": "22.18",
+    "Tablet": "5.27"
+  },
+  {
+    "Date": "2014-01",
+    "Desktop": "71.95",
+    "Mobile": "22.39",
+    "Tablet": "5.66"
+  },
+  {
+    "Date": "2014-02",
+    "Desktop": "70.99",
+    "Mobile": "23.25",
+    "Tablet": "5.76"
+  },
+  {
+    "Date": "2014-03",
+    "Desktop": "70.23",
+    "Mobile": "23.93",
+    "Tablet": "5.84"
+  },
+  {
+    "Date": "2014-04",
+    "Desktop": "70.61",
+    "Mobile": "23.56",
+    "Tablet": "5.83"
+  },
+  {
+    "Date": "2014-05",
+    "Desktop": "68.55",
+    "Mobile": "25.41",
+    "Tablet": "6.04"
+  },
+  {
+    "Date": "2014-06",
+    "Desktop": "66.93",
+    "Mobile": "26.66",
+    "Tablet": "6.4"
+  },
+  {
+    "Date": "2014-07",
+    "Desktop": "65.83",
+    "Mobile": "27.51",
+    "Tablet": "6.66"
+  },
+  {
+    "Date": "2014-08",
+    "Desktop": "64.65",
+    "Mobile": "28.57",
+    "Tablet": "6.78"
+  },
+  {
+    "Date": "2014-09",
+    "Desktop": "63.84",
+    "Mobile": "29.36",
+    "Tablet": "6.8"
+  },
+  {
+    "Date": "2014-10",
+    "Desktop": "62.77",
+    "Mobile": "30.67",
+    "Tablet": "6.56"
+  },
+  {
+    "Date": "2014-11",
+    "Desktop": "61.92",
+    "Mobile": "31.54",
+    "Tablet": "6.54"
+  },
+  {
+    "Date": "2014-12",
+    "Desktop": "61.68",
+    "Mobile": "31.82",
+    "Tablet": "6.5"
+  },
+  {
+    "Date": "2015-01",
+    "Desktop": "62.38",
+    "Mobile": "31.06",
+    "Tablet": "6.55"
+  },
+  {
+    "Date": "2015-02",
+    "Desktop": "62.62",
+    "Mobile": "30.81",
+    "Tablet": "6.57"
+  },
+  {
+    "Date": "2015-03",
+    "Desktop": "62.26",
+    "Mobile": "31.58",
+    "Tablet": "6.17"
+  },
+  {
+    "Date": "2015-04",
+    "Desktop": "62.71",
+    "Mobile": "31.56",
+    "Tablet": "5.73"
+  },
+  {
+    "Date": "2015-05",
+    "Desktop": "61.49",
+    "Mobile": "32.82",
+    "Tablet": "5.69"
+  },
+  {
+    "Date": "2015-06",
+    "Desktop": "60.11",
+    "Mobile": "34.21",
+    "Tablet": "5.68"
+  },
+  {
+    "Date": "2015-07",
+    "Desktop": "57",
+    "Mobile": "37.15",
+    "Tablet": "5.85"
+  },
+  {
+    "Date": "2015-08",
+    "Desktop": "55.22",
+    "Mobile": "39.18",
+    "Tablet": "5.6"
+  },
+  {
+    "Date": "2015-09",
+    "Desktop": "55.91",
+    "Mobile": "38.78",
+    "Tablet": "5.31"
+  },
+  {
+    "Date": "2015-10",
+    "Desktop": "55.86",
+    "Mobile": "39.01",
+    "Tablet": "5.14"
+  },
+  {
+    "Date": "2015-11",
+    "Desktop": "57.21",
+    "Mobile": "37.62",
+    "Tablet": "5.17"
+  },
+  {
+    "Date": "2015-12",
+    "Desktop": "56.25",
+    "Mobile": "38.62",
+    "Tablet": "5.13"
+  },
+  {
+    "Date": "2016-01",
+    "Desktop": "55.86",
+    "Mobile": "38.88",
+    "Tablet": "5.26"
+  },
+  {
+    "Date": "2016-02",
+    "Desktop": "55.82",
+    "Mobile": "38.96",
+    "Tablet": "5.22"
+  },
+  {
+    "Date": "2016-03",
+    "Desktop": "54.19",
+    "Mobile": "40.6",
+    "Tablet": "5.2"
+  },
+  {
+    "Date": "2016-04",
+    "Desktop": "53.54",
+    "Mobile": "41.32",
+    "Tablet": "5.14"
+  },
+  {
+    "Date": "2016-05",
+    "Desktop": "51.46",
+    "Mobile": "43.5",
+    "Tablet": "5.04"
+  },
+  {
+    "Date": "2016-06",
+    "Desktop": "53.22",
+    "Mobile": "41.61",
+    "Tablet": "5.16"
+  },
+  {
+    "Date": "2016-07",
+    "Desktop": "50.1",
+    "Mobile": "44.75",
+    "Tablet": "5.15"
+  },
+  {
+    "Date": "2016-08",
+    "Desktop": "50.61",
+    "Mobile": "44.41",
+    "Tablet": "4.98"
+  },
+  {
+    "Date": "2016-09",
+    "Desktop": "50.28",
+    "Mobile": "44.91",
+    "Tablet": "4.81"
+  },
+  {
+    "Date": "2016-10",
+    "Desktop": "48.74",
+    "Mobile": "46.53",
+    "Tablet": "4.73"
+  },
+  {
+    "Date": "2016-11",
+    "Desktop": "46.93",
+    "Mobile": "48.25",
+    "Tablet": "4.82"
+  },
+  {
+    "Date": "2016-12",
+    "Desktop": "44.79",
+    "Mobile": "50.31",
+    "Tablet": "4.9"
+  },
+  {
+    "Date": "2017-01",
+    "Desktop": "45.27",
+    "Mobile": "49.6",
+    "Tablet": "5.13"
+  },
+  {
+    "Date": "2017-02",
+    "Desktop": "45.23",
+    "Mobile": "49.73",
+    "Tablet": "5.04"
+  },
+  {
+    "Date": "2017-03",
+    "Desktop": "44.36",
+    "Mobile": "50.75",
+    "Tablet": "4.88"
+  },
+  {
+    "Date": "2017-04",
+    "Desktop": "43.23",
+    "Mobile": "51.95",
+    "Tablet": "4.82"
+  },
+  {
+    "Date": "2017-05",
+    "Desktop": "43.59",
+    "Mobile": "51.7",
+    "Tablet": "4.71"
+  },
+  {
+    "Date": "2017-06",
+    "Desktop": "42.19",
+    "Mobile": "53.03",
+    "Tablet": "4.78"
+  },
+  {
+    "Date": "2017-07",
+    "Desktop": "41.22",
+    "Mobile": "53.99",
+    "Tablet": "4.79"
+  },
+  {
+    "Date": "2017-08",
+    "Desktop": "42.75",
+    "Mobile": "52.64",
+    "Tablet": "4.62"
+  },
+  {
+    "Date": "2017-09",
+    "Desktop": "43.29",
+    "Mobile": "52.29",
+    "Tablet": "4.42"
+  },
+  {
+    "Date": "2017-10",
+    "Desktop": "44.78",
+    "Mobile": "50.87",
+    "Tablet": "4.35"
+  },
+  {
+    "Date": "2017-11",
+    "Desktop": "45.68",
+    "Mobile": "50.02",
+    "Tablet": "4.3"
+  },
+  {
+    "Date": "2017-12",
+    "Desktop": "43.26",
+    "Mobile": "52.48",
+    "Tablet": "4.26"
+  },
+  {
+    "Date": "2018-01",
+    "Desktop": "43.87",
+    "Mobile": "51.92",
+    "Tablet": "4.21"
+  },
+  {
+    "Date": "2018-02",
+    "Desktop": "44.12",
+    "Mobile": "51.82",
+    "Tablet": "4.06"
+  },
+  {
+    "Date": "2018-03",
+    "Desktop": "44.27",
+    "Mobile": "51.56",
+    "Tablet": "4.18"
+  },
+  {
+    "Date": "2018-04",
+    "Desktop": "44.66",
+    "Mobile": "51.2",
+    "Tablet": "4.14"
+  },
+  {
+    "Date": "2018-05",
+    "Desktop": "44.1",
+    "Mobile": "52",
+    "Tablet": "3.89"
+  },
+  {
+    "Date": "2018-06",
+    "Desktop": "43.63",
+    "Mobile": "52.52",
+    "Tablet": "3.85"
+  },
+  {
+    "Date": "2018-07",
+    "Desktop": "43.11",
+    "Mobile": "52.95",
+    "Tablet": "3.94"
+  },
+  {
+    "Date": "2018-08",
+    "Desktop": "43.33",
+    "Mobile": "52.54",
+    "Tablet": "4.13"
+  },
+  {
+    "Date": "2018-09",
+    "Desktop": "44.12",
+    "Mobile": "51.7",
+    "Tablet": "4.18"
+  },
+  {
+    "Date": "2018-10",
+    "Desktop": "47.78",
+    "Mobile": "48.2",
+    "Tablet": "4.03"
+  },
+  {
+    "Date": "2018-11",
+    "Desktop": "52.07",
+    "Mobile": "44.19",
+    "Tablet": "3.74"
+  },
+  {
+    "Date": "2018-12",
+    "Desktop": "47.2",
+    "Mobile": "49.06",
+    "Tablet": "3.74"
+  },
+  {
+    "Date": "2008-12",
+    "Desktop": "0",
+    "Mobile": "0",
+    "Tablet": "0"
+  }
+]
