@@ -6,54 +6,56 @@
     "caption": {
       "DE-CH": ""
     },
-    "source" : [{
-       "EN-EN": "Shipment forecast of laptops, desktop PCs and tablets worldwide (in million units)",
-       "info": "look at the source of the site there is a `table#statTable--mobile`",
-       "URL": "https://www.statista.com/statistics/272595/global-shipments-forecast-for-tablets-laptops-and-desktop-pcs/"
-    }]
+    "source": [
+      {
+        "EN-EN": "Shipment forecast of laptops, desktop PCs and tablets worldwide (in million units)",
+        "info": "look at the source of the site there is a `table#statTable--mobile`",
+        "URL": "https://www.statista.com/statistics/272595/global-shipments-forecast-for-tablets-laptops-and-desktop-pcs/"
+      }
+    ]
   },
   "shipments": [
-  {
-    "Year": 2010,
-    "Desktop-PCs": 157,
-    "Laptops": 201,
-    "Tablets": 19
-  },
-  {
-    "Year": 2011,
-    "Desktop-PCs": 155,
-    "Laptops": 209,
-    "Tablets": 76
-  },
-  {
-    "Year": 2012,
-    "Desktop-PCs": 148,
-    "Laptops": 201,
-    "Tablets": 145
-  },
-  {
-    "Year": 2013,
-    "Desktop-PCs": 134.4,
-    "Laptops": 180.9,
-    "Tablets": 219.9
-  },
-  {
-    "Year": 2014,
-    "Desktop-PCs": 133.85,
-    "Laptops": 174.28,
-    "Tablets": 230.1
-  },
-  {
-    "Year": 2015,
-    "Desktop-PCs": 113.6,
-    "Laptops": 163.1,
-    "Tablets": 208
-  },
-  {
-    "Year": 2016,
-    "Desktop-PCs": 103.3,
-    "Laptops": 156.8,
-    "Tablets": 174.9
-  }
-]
+    {
+      "Year": 2010,
+      "Desktop-PCs": 157,
+      "Laptops": 201,
+      "Tablets": 19
+    },
+    {
+      "Year": 2011,
+      "Desktop-PCs": 155,
+      "Laptops": 209,
+      "Tablets": 76
+    },
+    {
+      "Year": 2012,
+      "Desktop-PCs": 148,
+      "Laptops": 201,
+      "Tablets": 145
+    },
+    {
+      "Year": 2013,
+      "Desktop-PCs": 134.4,
+      "Laptops": 180.9,
+      "Tablets": 219.9
+    },
+    {
+      "Year": 2014,
+      "Desktop-PCs": 133.85,
+      "Laptops": 174.28,
+      "Tablets": 230.1
+    },
+    {
+      "Year": 2015,
+      "Desktop-PCs": 113.6,
+      "Laptops": 163.1,
+      "Tablets": 208
+    },
+    {
+      "Year": 2016,
+      "Desktop-PCs": 103.3,
+      "Laptops": 156.8,
+      "Tablets": 174.9
+    }
+  ]
 }
