@@ -6,8 +6,8 @@ import { VictoryLine, VictoryChart, VictoryAxis } from "victory";
 
 export default class Smartphonesale extends React.Component {
   render() {
-    let countTicks = [0, 10000, 50000, 60000, 100000, 110000].map(
-      (item, index) => item * 100000000
+    let countTicks = [0, 1, 2, 4, 6, 8, 10, 12].map(
+      item => item * 1000000000000
     );
 
     let { width, height } = dimensions;
