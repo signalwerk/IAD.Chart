@@ -4,7 +4,7 @@ import smartphoneYears from "./smartphone_years.json";
 import desktopYears from "./desktop_years.json";
 import vendorYears from "./vendor_years.json";
 
-const maxYear = 2016;
+const maxYear = 2018;
 
 class Data {
   vendorDesktopShipment() {
@@ -46,13 +46,22 @@ class Data {
   }
 
   smartphoneYears() {
-    return _(this.smartphoneSalesByYear())
-      .map("year")
-      .uniq()
-      .value();
+    return _(this.smartphoneSalesByYear()).map("year");
   }
 
   smartphoneSalesByYear() {
+    return _(smartphoneYears.sales)
+      .filter(item => item.year > 2007)
+      .filter(item => item.year <= maxYear)
+      .sortBy(["year"])
+      .map(item => ({
+        year: item.year,
+        total: item.unitsInMio * 1000000
+      }))
+      .value();
+  }
+
+  smartphoneSalesByYearCalc() {
     // sum by year
     var result = _(smartphoneQuarters.sales)
       .map("Year")
