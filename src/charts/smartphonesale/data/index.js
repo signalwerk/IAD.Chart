@@ -13,13 +13,14 @@ class Data {
         year: item.year,
         total:
           ((item.Lenovo || 0) +
-          (item["HP Inc"] || 0) +
-          (item.Dell || 0) +
-          (item.Asus || 0) +
-          (item.Apple || 0) +
-          (item.Acer || 0) +
-          (item.Toshiba || 0) +
-          (item.Others || 0)) * 1000000
+            (item["HP Inc"] || 0) +
+            (item.Dell || 0) +
+            (item.Asus || 0) +
+            (item.Apple || 0) +
+            (item.Acer || 0) +
+            (item.Toshiba || 0) +
+            (item.Others || 0)) *
+          1000000
       }))
       .filter(item => item.year >= 2007) // 2009 is not complete
       .value();
@@ -60,9 +61,10 @@ class Data {
       .filter(item => item <= maxYear)
       .map(key => ({
         year: key,
-        total: _(smartphoneQuarters.sales)
-          .filter({ Year: key })
-          .sumBy("total") * 1000000
+        total:
+          _(smartphoneQuarters.sales)
+            .filter({ Year: key })
+            .sumBy("total") * 1000000
       }))
       .value();
 
