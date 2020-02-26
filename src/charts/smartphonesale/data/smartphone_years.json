@@ -32,6 +32,22 @@
     {
       "year": 2014,
       "unitsInMio": 1244.89
+    },
+    {
+      "year": 2015,
+      "unitsInMio": 1423.9
+    },
+    {
+      "year": 2016,
+      "unitsInMio": 1495.96
+    },
+    {
+      "year": 2017,
+      "unitsInMio": 1536.54
+    },
+    {
+      "year": 2018,
+      "unitsInMio": 1556.27
     }
   ]
 }
