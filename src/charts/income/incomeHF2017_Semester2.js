@@ -2,6 +2,7 @@
 
 export const IAD2017_S2 = {
   caption: "2. Semester",
+  semester: 2,
   data: [
     { CHF: 66400, gender: "m" },
     { CHF: 19500, gender: "m" },

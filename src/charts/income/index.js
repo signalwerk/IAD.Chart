@@ -17,16 +17,7 @@ import { IAD2019_S2 } from "./incomeHF2019_Semester2.js";
 import { clipBestWorst, average } from "./util.js";
 
 // const Theme = VictoryTheme.material;
-const IAD2017_axis = [
-  54000,
-  58000,
-  62000,
-  66000,
-  70000,
-  74000,
-  78000,
-  82000
-];
+const IAD2017_axis = [54000, 58000, 62000, 66000, 70000, 74000, 78000, 82000];
 const IAD2019_axis = IAD2017_axis;
 
 let renderTab = (data, clip) => {
@@ -93,8 +84,8 @@ let renderChart = (data, clip, axis) => {
         standalone={false}
       >
         <VictoryAxis
-          tickValues={dataIn.map((item, index) => index + 1)}
-          tickFormat={y => dataIn[y - 1].caption}
+          tickValues={[0, 1, 2, 3, 4, 5].map((item, index) => index + 1)}
+          tickFormat={y => `${y} Semester`}
         />
 
         <VictoryAxis
@@ -125,7 +116,7 @@ let renderChart = (data, clip, axis) => {
             data: strokes[0]
           }}
           data={dataIn.map((item, index) => {
-            return { x: index + 1, y: average(item.data, "f") };
+            return { x: item.semester, y: average(item.data, "f") };
           })}
         />
 
@@ -134,7 +125,7 @@ let renderChart = (data, clip, axis) => {
             data: strokes[1]
           }}
           data={dataIn.map((item, index) => {
-            return { x: index + 1, y: average(item.data) };
+            return { x: item.semester, y: average(item.data) };
           })}
         />
         <VictoryLine
@@ -142,7 +133,7 @@ let renderChart = (data, clip, axis) => {
             data: strokes[2]
           }}
           data={dataIn.map((item, index) => {
-            return { x: index + 1, y: average(item.data, "m") };
+            return { x: item.semester, y: average(item.data, "m") };
           })}
         />
       </VictoryChart>
