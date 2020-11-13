@@ -1,5 +1,4 @@
 import React from "react";
-import { clone } from "lodash";
 import { VictoryLine, VictoryLabel, VictoryChart, VictoryAxis } from "victory";
 // import Theme from './theme.js';
 import ThemeSignalwerk, {
@@ -15,15 +14,13 @@ import { IAD2017_S6 } from "./incomeHF2017_Semester6.js";
 import { IAD2019_S1 } from "./incomeHF2019_Semester1.js";
 import { IAD2019_S2 } from "./incomeHF2019_Semester2.js";
 import { IAD2019_S3 } from "./incomeHF2019_Semester3.js";
-import { clipBestWorst, average } from "./util.js";
+import { average, median } from "./util.js";
 
 // const Theme = VictoryTheme.material;
 const IAD2017_axis = [54000, 58000, 62000, 66000, 70000, 74000, 78000, 82000];
 const IAD2019_axis = IAD2017_axis;
 
-let renderTab = (data, clip) => {
-  let dataIn = clip ? clipData(data) : data;
-
+let renderTab = (dataIn, med) => {
   return (
     <table>
       <thead>
@@ -43,9 +40,24 @@ let renderTab = (data, clip) => {
               <td>
                 <strong>{item.caption}</strong>
               </td>
-              <td>CHF {Math.round(average(item.data, "f"))}.–</td>
-              <td>CHF {Math.round(average(item.data))}.–</td>
-              <td>CHF {Math.round(average(item.data, "m"))}.–</td>
+              <td>
+                CHF{" "}
+                {Math.round(
+                  med ? median(item.data, "f") : average(item.data, "f")
+                )}
+                .–
+              </td>
+              <td>
+                CHF {Math.round(med ? median(item.data) : average(item.data))}
+                .–
+              </td>
+              <td>
+                CHF{" "}
+                {Math.round(
+                  med ? median(item.data, "m") : average(item.data, "m")
+                )}
+                .–
+              </td>
             </tr>
           );
         })}
@@ -54,21 +66,8 @@ let renderTab = (data, clip) => {
   );
 };
 
-let clipData = (data) => {
-  let dataIn = [];
-
-  data.forEach((item) => {
-    let newItem = clone(item);
-    newItem.data = clipBestWorst(newItem.data);
-    dataIn.push(newItem);
-  });
-  return dataIn;
-};
-
-let renderChart = (data, clip, axis) => {
+let renderChart = (dataIn, med, axis) => {
   let { width, height } = dimensions;
-
-  let dataIn = clip ? clipData(data) : data;
 
   return (
     <svg
@@ -117,7 +116,10 @@ let renderChart = (data, clip, axis) => {
             data: strokes[0],
           }}
           data={dataIn.map((item, index) => {
-            return { x: item.semester, y: average(item.data, "f") };
+            return {
+              x: item.semester,
+              y: med ? median(item.data, "f") : average(item.data, "f"),
+            };
           })}
         />
 
@@ -126,7 +128,10 @@ let renderChart = (data, clip, axis) => {
             data: strokes[1],
           }}
           data={dataIn.map((item, index) => {
-            return { x: item.semester, y: average(item.data) };
+            return {
+              x: item.semester,
+              y: med ? median(item.data) : average(item.data),
+            };
           })}
         />
         <VictoryLine
@@ -134,7 +139,10 @@ let renderChart = (data, clip, axis) => {
             data: strokes[2],
           }}
           data={dataIn.map((item, index) => {
-            return { x: item.semester, y: average(item.data, "m") };
+            return {
+              x: item.semester,
+              y: med ? median(item.data, "m") : average(item.data, "m"),
+            };
           })}
         />
       </VictoryChart>
@@ -156,7 +164,7 @@ class sIncome extends React.Component {
       axis = IAD2019_axis;
     }
 
-    return renderChart(data, this.props.clip, axis);
+    return renderChart(data, this.props.median, axis);
   }
 }
 
@@ -172,18 +180,16 @@ export default class Income extends React.Component {
     }
 
     if (this.props.filter === "HF2019") {
-      console.log({ IAD2019_S2, IAD2019_S3 });
       data.push(IAD2019_S1, IAD2019_S2, IAD2019_S3);
       axis = IAD2019_axis;
     }
 
     return (
       <div>
-        <h3>Einkommen</h3>
+        <h3>Einkommen – Durchschnitt</h3>
         {renderChart(data, false, axis)}
         {renderTab(data, false, axis)}
-        <h3>Einkommen – bereinigt</h3>
-        <p> Höchst- und Tiefstverdienende gestrichen</p>
+        <h3>Einkommen – Median</h3>
         {renderChart(data, true, axis)}
         {renderTab(data, true, axis)}
       </div>

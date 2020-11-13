@@ -13,64 +13,64 @@ import SpeedOfInformation from "./charts/SpeedOfInformation";
 let exportSVG = [
   {
     chart: <SpeedOfInformation />,
-    filename: "SpeedOfInformation_km"
+    filename: "SpeedOfInformation_km",
   },
 
   {
     chart: <Letters />,
-    filename: "letters_usa"
+    filename: "letters_usa",
   },
   {
     chart: <Bookproduction />,
-    filename: "Bookproduction_linear"
+    filename: "Bookproduction_linear",
   },
 
   {
     chart: <Bookproduction log={true} />,
-    filename: "Bookproduction_log"
+    filename: "Bookproduction_log",
   },
 
   {
     chart: <Basefont />,
-    filename: "Basefont"
+    filename: "Basefont",
   },
 
   {
-    chart: <SSRincome filter="HF2017" clip={false} />,
-    filename: "IAD2017_income"
+    chart: <SSRincome filter="HF2017" median={false} />,
+    filename: "IAD2017_income",
   },
 
   {
-    chart: <SSRincome filter="HF2017" clip={true} />,
-    filename: "IAD2017_income_clip"
+    chart: <SSRincome filter="HF2017" median={true} />,
+    filename: "IAD2017_income_median",
   },
   {
-    chart: <SSRincome filter="HF2019" clip={false} />,
-    filename: "IAD2019_income"
+    chart: <SSRincome filter="HF2019" median={false} />,
+    filename: "IAD2019_income",
   },
   {
-    chart: <SSRincome filter="HF2019" clip={true} />,
-    filename: "IAD2019_income_clip"
+    chart: <SSRincome filter="HF2019" median={true} />,
+    filename: "IAD2019_income_median",
   },
   {
     chart: <Headings />,
-    filename: "Headings"
+    filename: "Headings",
   },
 
   {
     chart: <Headings showDetail={true} />,
-    filename: "Headings_details"
+    filename: "Headings_details",
   },
 
   {
     chart: <Smartphonesale />,
-    filename: "SmartphoneSales"
-  }
+    filename: "SmartphoneSales",
+  },
 ];
-const StaticSVG = value => {
+const StaticSVG = (value) => {
   console.log("--- SVG-Write --- start");
 
-  exportSVG.forEach(item => {
+  exportSVG.forEach((item) => {
     console.log(`  * ${item.filename}`);
     const result = ReactDOMServer.renderToStaticMarkup(item.chart);
     fs.writeFileSync(`./SVG/charts/${item.filename}.svg`, result);
