@@ -18,6 +18,6 @@ export const IAD2019_S2 = {
     { CHF: 70200, gender: "f" },
     { CHF: 61100, gender: "f" },
     { CHF: 58500, gender: "f" },
-    { CHF: 62400, gender: "f" }
-  ]
+    { CHF: 62400, gender: "f" },
+  ],
 };

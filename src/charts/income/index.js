@@ -7,13 +7,14 @@ import ThemeSignalwerk, {
   strokes,
   labelStyles,
   blockStyles,
-  dimensions
+  dimensions,
 } from "../theme";
 import { IAD2017_S2 } from "./incomeHF2017_Semester2.js";
 import { IAD2017_S4 } from "./incomeHF2017_Semester4.js";
 import { IAD2017_S6 } from "./incomeHF2017_Semester6.js";
 import { IAD2019_S1 } from "./incomeHF2019_Semester1.js";
 import { IAD2019_S2 } from "./incomeHF2019_Semester2.js";
+import { IAD2019_S3 } from "./incomeHF2019_Semester3.js";
 import { clipBestWorst, average } from "./util.js";
 
 // const Theme = VictoryTheme.material;
@@ -53,10 +54,10 @@ let renderTab = (data, clip) => {
   );
 };
 
-let clipData = data => {
+let clipData = (data) => {
   let dataIn = [];
 
-  data.forEach(item => {
+  data.forEach((item) => {
     let newItem = clone(item);
     newItem.data = clipBestWorst(newItem.data);
     dataIn.push(newItem);
@@ -85,12 +86,12 @@ let renderChart = (data, clip, axis) => {
       >
         <VictoryAxis
           tickValues={[0, 1, 2, 3, 4, 5].map((item, index) => index + 1)}
-          tickFormat={y => `${y} Semester`}
+          tickFormat={(y) => `${y} Semester`}
         />
 
         <VictoryAxis
           dependentAxis
-          tickFormat={x => `${x / 1000} K`}
+          tickFormat={(x) => `${x / 1000} K`}
           tickValues={axis}
         />
 
@@ -113,7 +114,7 @@ let renderChart = (data, clip, axis) => {
         {/* Red annotation line */}
         <VictoryLine
           style={{
-            data: strokes[0]
+            data: strokes[0],
           }}
           data={dataIn.map((item, index) => {
             return { x: item.semester, y: average(item.data, "f") };
@@ -122,7 +123,7 @@ let renderChart = (data, clip, axis) => {
 
         <VictoryLine
           style={{
-            data: strokes[1]
+            data: strokes[1],
           }}
           data={dataIn.map((item, index) => {
             return { x: item.semester, y: average(item.data) };
@@ -130,7 +131,7 @@ let renderChart = (data, clip, axis) => {
         />
         <VictoryLine
           style={{
-            data: strokes[2]
+            data: strokes[2],
           }}
           data={dataIn.map((item, index) => {
             return { x: item.semester, y: average(item.data, "m") };
@@ -151,7 +152,7 @@ class sIncome extends React.Component {
     }
 
     if (this.props.filter === "HF2019") {
-      data.push(IAD2019_S1, IAD2019_S2);
+      data.push(IAD2019_S1, IAD2019_S2, IAD2019_S3);
       axis = IAD2019_axis;
     }
 
@@ -171,7 +172,8 @@ export default class Income extends React.Component {
     }
 
     if (this.props.filter === "HF2019") {
-      data.push(IAD2019_S1, IAD2019_S2);
+      console.log({ IAD2019_S2, IAD2019_S3 });
+      data.push(IAD2019_S1, IAD2019_S2, IAD2019_S3);
       axis = IAD2019_axis;
     }
 
