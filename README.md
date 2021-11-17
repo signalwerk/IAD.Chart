@@ -1,3 +1,4 @@
+[![Build Status](https://ci.signalwerk.ch/api/badges/signalwerk/IAD.Chart/status.svg)](https://ci.signalwerk.ch/signalwerk/IAD.Chart)
 # Graphics
 Graphics for IAD
 
