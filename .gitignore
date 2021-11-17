@@ -24,3 +24,5 @@ yarn-error.log*
 ci/.ssh/id_rsa
 ci/.ssh/secret.key
 /src/charts/BrowserAndDevice/data/node_modules
+ci/.ssh/id_rsa
+ci/.ssh/secret.key
