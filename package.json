@@ -4,6 +4,7 @@
   "description": "Graphics for IAD",
   "private": true,
   "dependencies": {
+    "csv-parser": "^2.3.2",
     "lodash": "^4.17.11",
     "momentjs": "^2.0.0",
     "react": "^16.8.6",
@@ -11,12 +12,12 @@
     "react-scripts": "2.1.8",
     "victory": "^32.2.0"
   },
-  "homepage" : "https://signalwerk.github.io/IAD.Chart",
+  "homepage": "https://signalwerk.github.io/IAD.Chart",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI=true npm run build-svg && npm run build:react-script && mv ./SVG/charts ./build/",
+    "build:react-script": "react-scripts build",
     "svg": "mv ./SVG/charts/ ./build",
-    "build:all": "CI=true npm run build-svg && npm run build && mv ./SVG/charts ./build/",
     "build-svg": "mkdir -p ./SVG/charts/ && react-scripts test"
   },
   "eslintConfig": {

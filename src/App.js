@@ -27,6 +27,7 @@ class App extends Component {
         <br />
         <br />
         <br />
+        <h2>Abstufungen </h2>
         <Basefont />
 
         <h2>Jahreseinkommen – HF2019</h2>

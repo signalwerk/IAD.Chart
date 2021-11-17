@@ -7,7 +7,7 @@ import ThemeSignalwerk, {
   strokes,
   defaultFont,
   blockStyles,
-  dimensions
+  dimensions,
 } from "../theme";
 
 import {
@@ -16,7 +16,7 @@ import {
   VictoryLine,
   VictoryChart,
   VictoryAxis,
-  VictoryGroup
+  VictoryGroup,
 } from "victory";
 
 let cutOff = 0.8;
@@ -56,81 +56,97 @@ export default class Headings extends React.Component {
               Data.W3C.title,
               Data.bootstrap5.title,
               `${Data.foundation6.title} – Desktop`,
-              `${Data.foundation6.title} – Mobile`
+              `${Data.foundation6.title} – Mobile`,
             ]}
           />
           <VictoryAxis
             tickValues={[6, 5, 4, 3, 2, 1]}
             invertAxis
-            tickFormat={t => `H${t}`}
+            tickFormat={(t) => `H${t}`}
           />
 
-          <VictoryAxis
-            dependentAxis
-            tickFormat={t => `${t} rem`}
-            tickValues={[0, 0.5, 1, 1.5, 2, 2.5]}
-            style={assign(
-              {
-                grid: assign(
-                  { strokeDasharray: t => (t === 1 ? "none" : "0, 6") },
+          {!showDetail && (
+            <VictoryAxis
+              dependentAxis
+              tickFormat={(t) => `${t} rem`}
+              tickValues={[0, 0.5, 1, 1.5, 2, 2.5, 3]}
+              style={assign(
+                {
+                  grid: assign(
+                    { strokeDasharray: (t) => (t === 1 ? "none" : "0, 6") },
 
-                  ThemeSignalwerk.dependentAxis.grid
-                )
-              },
-              ThemeSignalwerk.dependentAxis
-            )}
-          />
+                    ThemeSignalwerk.dependentAxis.grid
+                  ),
+                },
+                ThemeSignalwerk.dependentAxis
+              )}
+            />
+          )}
 
-          <VictoryLine
-            style={{
-              data: strokes[0]
-            }}
-            data={Data.W3C.fontSize.map((item, index) => ({
-              y: item.value,
-              x: item.order
-            }))}
-          />
-          <VictoryLine
-            style={{
-              data: strokes[2]
-            }}
-            data={Data.bootstrap5.fontSize.map((item, index) => ({
-              y: item.value,
-              x: item.order
-            }))}
-          />
+          {!showDetail && (
+            <VictoryLine
+              style={{
+                data: strokes[0],
+              }}
+              data={Data.W3C.fontSize.map((item, index) => ({
+                y: item.value,
+                x: item.order,
+              }))}
+            />
+          )}
+          {!showDetail && (
+            <VictoryLine
+              style={{
+                data: strokes[2],
+              }}
+              data={Data.bootstrap5.fontSize.map((item, index) => ({
+                y: item.value,
+                x: item.order,
+              }))}
+            />
+          )}
 
-          <VictoryLine
-            style={{
-              data: strokes[1]
-            }}
-            data={Data.foundation6.fontSize.desktop.map((item, index) => ({
-              y: item.value,
-              x: item.order
-            }))}
-          />
-          <VictoryLine
-            style={{
-              data: strokes[3]
-            }}
-            data={Data.foundation6.fontSize.mobile.map((item, index) => ({
-              y: item.value,
-              x: item.order
-            }))}
-          />
-
+          {!showDetail && (
+            <VictoryLine
+              style={{
+                data: strokes[1],
+              }}
+              data={Data.foundation6.fontSize.desktop.map((item, index) => ({
+                y: item.value,
+                x: item.order,
+              }))}
+            />
+          )}
+          {!showDetail && (
+            <VictoryLine
+              style={{
+                data: strokes[3],
+              }}
+              data={Data.foundation6.fontSize.mobile.map((item, index) => ({
+                y: item.value,
+                x: item.order,
+              }))}
+            />
+          )}
           {showDetail && (
             <VictoryAxis
-              orientation="right"
               dependentAxis
-              tickFormat={t =>
+              tickFormat={(t) =>
                 `${Math.round((t / percentageScale + cutOff) * 100)}%`
               }
               tickValues={[0.8, 1, 1.2, 1.3, 1.4, 1.5].map(
-                i => (i - cutOff) * percentageScale
+                (i) => (i - cutOff) * percentageScale
               )}
-              offsetX={80}
-              tickLabelComponent={<VictoryLabel dx={40} />}
+              style={assign(
+                {
+                  grid: assign(
+                    { strokeDasharray: (t) => (t === 1 ? "none" : "0, 6") },
+
+                    ThemeSignalwerk.dependentAxis.grid
+                  ),
+                },
+                ThemeSignalwerk.dependentAxis
+              )}
             />
           )}
 
@@ -148,7 +164,7 @@ export default class Headings extends React.Component {
                       ? 0
                       : ((1 / data[index - 1].value) * item.value - cutOff) *
                         percentageScale,
-                  x: item.order
+                  x: item.order,
                 }))}
               />
 
@@ -162,7 +178,7 @@ export default class Headings extends React.Component {
                         ? 0
                         : ((1 / data[index - 1].value) * item.value - cutOff) *
                           percentageScale,
-                    x: item.order
+                    x: item.order,
                   }))}
               />
 
@@ -176,7 +192,7 @@ export default class Headings extends React.Component {
                         ? 0
                         : ((1 / data[index - 1].value) * item.value - cutOff) *
                           percentageScale,
-                    x: item.order
+                    x: item.order,
                   }))}
               />
 
@@ -190,7 +206,7 @@ export default class Headings extends React.Component {
                         ? 0
                         : ((1 / data[index - 1].value) * item.value - cutOff) *
                           percentageScale,
-                    x: item.order
+                    x: item.order,
                   }))}
               />
             </VictoryGroup>
