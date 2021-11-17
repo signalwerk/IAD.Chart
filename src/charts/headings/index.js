@@ -54,9 +54,9 @@ export default class Headings extends React.Component {
             style={{ fill: "black", fontSize: "12px", fontFamily: defaultFont }}
             text={[
               Data.W3C.title,
-              Data.bootstrap.title,
-              `${Data.foundation.title} – Desktop`,
-              `${Data.foundation.title} – Mobile`
+              Data.bootstrap5.title,
+              `${Data.foundation6.title} – Desktop`,
+              `${Data.foundation6.title} – Mobile`
             ]}
           />
           <VictoryAxis
@@ -94,7 +94,7 @@ export default class Headings extends React.Component {
             style={{
               data: strokes[2]
             }}
-            data={Data.bootstrap.fontSize.map((item, index) => ({
+            data={Data.bootstrap5.fontSize.map((item, index) => ({
               y: item.value,
               x: item.order
             }))}
@@ -104,7 +104,7 @@ export default class Headings extends React.Component {
             style={{
               data: strokes[1]
             }}
-            data={Data.foundation.fontSize.desktop.map((item, index) => ({
+            data={Data.foundation6.fontSize.desktop.map((item, index) => ({
               y: item.value,
               x: item.order
             }))}
@@ -113,7 +113,7 @@ export default class Headings extends React.Component {
             style={{
               data: strokes[3]
             }}
-            data={Data.foundation.fontSize.mobile.map((item, index) => ({
+            data={Data.foundation6.fontSize.mobile.map((item, index) => ({
               y: item.value,
               x: item.order
             }))}
@@ -154,7 +154,7 @@ export default class Headings extends React.Component {
 
               <VictoryBar
                 standalone
-                data={Data.bootstrap.fontSize
+                data={Data.bootstrap5.fontSize
                   .reverse()
                   .map((item, index, data) => ({
                     y:
@@ -168,7 +168,7 @@ export default class Headings extends React.Component {
 
               <VictoryBar
                 standalone
-                data={Data.foundation.fontSize.desktop
+                data={Data.foundation6.fontSize.desktop
                   .reverse()
                   .map((item, index, data) => ({
                     y:
@@ -182,7 +182,7 @@ export default class Headings extends React.Component {
 
               <VictoryBar
                 standalone
-                data={Data.foundation.fontSize.mobile
+                data={Data.foundation6.fontSize.mobile
                   .reverse()
                   .map((item, index, data) => ({
                     y:
